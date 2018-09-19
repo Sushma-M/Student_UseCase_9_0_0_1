@@ -12,15 +12,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
 import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
+import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
 import com.student_usecase.school_db.Results;
@@ -34,14 +37,17 @@ import com.student_usecase.school_db.StudentDetails;
  * @see StudentDetails
  */
 @Service("School_DB.StudentDetailsService")
+@Validated
 public class StudentDetailsServiceImpl implements StudentDetailsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StudentDetailsServiceImpl.class);
 
+    @Lazy
     @Autowired
 	@Qualifier("School_DB.ResultsService")
 	private ResultsService resultsService;
 
+    @Lazy
     @Autowired
 	@Qualifier("School_DB.StudentAcademicsService")
 	private StudentAcademicsService studentAcademicsService;
@@ -59,19 +65,19 @@ public class StudentDetailsServiceImpl implements StudentDetailsService {
 	public StudentDetails create(StudentDetails studentDetails) {
         LOGGER.debug("Creating a new StudentDetails with information: {}", studentDetails);
         StudentDetails studentDetailsCreated = this.wmGenericDao.create(studentDetails);
-        if(studentDetailsCreated.getStudentAcademicses() != null) {
-            for(StudentAcademics studentAcademicse : studentDetailsCreated.getStudentAcademicses()) {
-                studentAcademicse.setStudentDetails(studentDetailsCreated);
-                LOGGER.debug("Creating a new child StudentAcademics with information: {}", studentAcademicse);
-                studentAcademicsService.create(studentAcademicse);
-            }
-        }
-
         if(studentDetailsCreated.getResultses() != null) {
             for(Results resultse : studentDetailsCreated.getResultses()) {
                 resultse.setStudentDetails(studentDetailsCreated);
                 LOGGER.debug("Creating a new child Results with information: {}", resultse);
                 resultsService.create(resultse);
+            }
+        }
+
+        if(studentDetailsCreated.getStudentAcademicses() != null) {
+            for(StudentAcademics studentAcademicse : studentDetailsCreated.getStudentAcademicses()) {
+                studentAcademicse.setStudentDetails(studentDetailsCreated);
+                LOGGER.debug("Creating a new child StudentAcademics with information: {}", studentAcademicse);
+                studentAcademicsService.create(studentAcademicse);
             }
         }
         return studentDetailsCreated;
@@ -165,14 +171,9 @@ public class StudentDetailsServiceImpl implements StudentDetailsService {
     }
 
     @Transactional(readOnly = true, value = "School_DBTransactionManager")
-    @Override
-    public Page<StudentAcademics> findAssociatedStudentAcademicses(Integer studentId, Pageable pageable) {
-        LOGGER.debug("Fetching all associated studentAcademicses");
-
-        StringBuilder queryBuilder = new StringBuilder();
-        queryBuilder.append("studentDetails.studentId = '" + studentId + "'");
-
-        return studentAcademicsService.findAll(queryBuilder.toString(), pageable);
+	@Override
+    public Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable) {
+        return this.wmGenericDao.getAggregatedValues(aggregationInfo, pageable);
     }
 
     @Transactional(readOnly = true, value = "School_DBTransactionManager")
@@ -184,6 +185,17 @@ public class StudentDetailsServiceImpl implements StudentDetailsService {
         queryBuilder.append("studentDetails.studentId = '" + studentId + "'");
 
         return resultsService.findAll(queryBuilder.toString(), pageable);
+    }
+
+    @Transactional(readOnly = true, value = "School_DBTransactionManager")
+    @Override
+    public Page<StudentAcademics> findAssociatedStudentAcademicses(Integer studentId, Pageable pageable) {
+        LOGGER.debug("Fetching all associated studentAcademicses");
+
+        StringBuilder queryBuilder = new StringBuilder();
+        queryBuilder.append("studentDetails.studentId = '" + studentId + "'");
+
+        return studentAcademicsService.findAll(queryBuilder.toString(), pageable);
     }
 
     /**

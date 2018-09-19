@@ -16,11 +16,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
 import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
+import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
 import com.student_usecase.school_db.StudentAcademics;
@@ -33,6 +35,7 @@ import com.student_usecase.school_db.StudentAcademicsId;
  * @see StudentAcademics
  */
 @Service("School_DB.StudentAcademicsService")
+@Validated
 public class StudentAcademicsServiceImpl implements StudentAcademicsService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StudentAcademicsServiceImpl.class);
@@ -142,6 +145,12 @@ public class StudentAcademicsServiceImpl implements StudentAcademicsService {
 	@Override
 	public long count(String query) {
         return this.wmGenericDao.count(query);
+    }
+
+    @Transactional(readOnly = true, value = "School_DBTransactionManager")
+	@Override
+    public Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable) {
+        return this.wmGenericDao.getAggregatedValues(aggregationInfo, pageable);
     }
 
 

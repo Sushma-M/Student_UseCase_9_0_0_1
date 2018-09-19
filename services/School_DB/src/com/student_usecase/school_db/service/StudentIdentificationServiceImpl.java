@@ -12,15 +12,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.validation.annotation.Validated;
 
 import com.wavemaker.runtime.data.dao.WMGenericDao;
 import com.wavemaker.runtime.data.exception.EntityNotFoundException;
 import com.wavemaker.runtime.data.export.ExportType;
 import com.wavemaker.runtime.data.expression.QueryFilter;
+import com.wavemaker.runtime.data.model.AggregationInfo;
 import com.wavemaker.runtime.file.model.Downloadable;
 
 import com.student_usecase.school_db.StudentDetails;
@@ -33,10 +36,12 @@ import com.student_usecase.school_db.StudentIdentification;
  * @see StudentIdentification
  */
 @Service("School_DB.StudentIdentificationService")
+@Validated
 public class StudentIdentificationServiceImpl implements StudentIdentificationService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(StudentIdentificationServiceImpl.class);
 
+    @Lazy
     @Autowired
 	@Qualifier("School_DB.StudentDetailsService")
 	private StudentDetailsService studentDetailsService;
@@ -148,6 +153,12 @@ public class StudentIdentificationServiceImpl implements StudentIdentificationSe
 	@Override
 	public long count(String query) {
         return this.wmGenericDao.count(query);
+    }
+
+    @Transactional(readOnly = true, value = "School_DBTransactionManager")
+	@Override
+    public Page<Map<String, Object>> getAggregatedValues(AggregationInfo aggregationInfo, Pageable pageable) {
+        return this.wmGenericDao.getAggregatedValues(aggregationInfo, pageable);
     }
 
 

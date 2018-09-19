@@ -11,6 +11,7 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -104,8 +105,8 @@ public class Results implements Serializable {
         this.presence = presence;
     }
 
-    
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`GRADE_ID`", referencedColumnName = "`GRADE_ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_RESULTS_TO_GRADE_DETAiHx5M`"))
     public GradeDetails getGradeDetails() {
         return this.gradeDetails;
     }
@@ -118,8 +119,8 @@ public class Results implements Serializable {
         this.gradeDetails = gradeDetails;
     }
 
-    
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`STUDENT_ID`", referencedColumnName = "`STUDENT_ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_RESULTS_TO_STUDENT_DEGRGsr`"))
     public StudentDetails getStudentDetails() {
         return this.studentDetails;
     }
@@ -132,8 +133,12 @@ public class Results implements Serializable {
         this.studentDetails = studentDetails;
     }
 
-    
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumns(value = {
+            @JoinColumn(name = "`ACADEMIC_YEAR`", referencedColumnName = "`ACADEMIC_YEAR`", insertable = false, updatable = false),
+            @JoinColumn(name = "`STANDARD_ID`", referencedColumnName = "`STANDARD_ID`", insertable = false, updatable = false),
+            @JoinColumn(name = "`TEST_CONDUCTED_ID`", referencedColumnName = "`TEST_CONDUCTED_ID`", insertable = false, updatable = false)},
+        foreignKey = @ForeignKey(name = "`FK_RESULTS_TO_TEST_CONDUPWxUc`"))
     public TestConducted getTestConducted() {
         return this.testConducted;
     }

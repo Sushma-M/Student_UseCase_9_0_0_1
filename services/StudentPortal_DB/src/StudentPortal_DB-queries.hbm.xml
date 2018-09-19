@@ -1,34 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <sql-query name="SV_AcademicSubjectsByStandard">
-    <![CDATA[
-      select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECTS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD=stnd.STANDARD_ID
-    ]]>
-  </sql-query>
-  <sql-query name="SV_CountOfStudentsInAcademics">
-    <![CDATA[
-      select count(STUDENT_ID),STANDARD from STUDENT_ACADEMICS where STANDARD=:standard and ACADEMIC_YEAR=:year group by STANDARD
-    ]]>
-  </sql-query>
-  <sql-query name="SV_ResultsByTestID">
-    <![CDATA[
-      select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t where r.STUDENT_ID=s.STUDENT_ID and t.TEST_NAME=:T_Name and t.TEST_ID=r.TEST_ID group by r.STUDENT_ID,r.TEST_ID
-    ]]>
-  </sql-query>
-  <sql-query name="SV_StudentAcademicResults">
-    <![CDATA[
-      select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME,g.GRADE from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t,GRADE_DETAILS g where r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=r.TEST_ID and r.GRADE_ID=g.GRADE_ID and s.STUDENT_ID=:student_id group by r.STUDENT_ID,r.TEST_ID
-    ]]>
-  </sql-query>
-  <sql-query name="SV_TestDetails">
-    <![CDATA[
-      select count(TEST_ID),TEST_ID, TEST_NAME from TEST_DETAILS group by TEST_ID
-    ]]>
-  </sql-query>
-  <sql-query name="SV_TestQuery">
-    <![CDATA[
-      select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER,JOINING_DATE from STUDENT_DETAILS
-    ]]>
-  </sql-query>
+    <sql-query name="SV_TestDetails">
+        <![CDATA[
+        select count(TEST_ID),TEST_ID, TEST_NAME from TEST_DETAILS group by TEST_ID
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_TestDetails__count">
+        <![CDATA[
+        select count(*) from (select count(TEST_ID),TEST_ID, TEST_NAME from TEST_DETAILS group by TEST_ID) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_ResultsByTestID">
+        <![CDATA[
+        select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t where r.STUDENT_ID=s.STUDENT_ID and t.TEST_NAME=:T_Name and t.TEST_ID=r.TEST_ID group by r.STUDENT_ID,r.TEST_ID
+        ]]>
+    <query-param name="T_Name" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="SV_ResultsByTestID__count">
+        <![CDATA[
+        select count(*) from (select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t where r.STUDENT_ID=s.STUDENT_ID and t.TEST_NAME=:T_Name and t.TEST_ID=r.TEST_ID group by r.STUDENT_ID,r.TEST_ID) wmTempTable
+        ]]>
+    <query-param name="T_Name" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="SV_StudentAcademicResults">
+        <![CDATA[
+        select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME,g.GRADE from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t,GRADE_DETAILS g where r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=r.TEST_ID and r.GRADE_ID=g.GRADE_ID and s.STUDENT_ID=:student_id group by r.STUDENT_ID,r.TEST_ID
+        ]]>
+    <query-param name="student_id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="SV_StudentAcademicResults__count">
+        <![CDATA[
+        select count(*) from (select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_ID as TESTID, t.TEST_NAME as TESTNAME,g.GRADE from RESULTS r, STUDENT_DETAILS s, TEST_DETAILS t,GRADE_DETAILS g where r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=r.TEST_ID and r.GRADE_ID=g.GRADE_ID and s.STUDENT_ID=:student_id group by r.STUDENT_ID,r.TEST_ID) wmTempTable
+        ]]>
+    <query-param name="student_id" type="java.lang.Integer"/>
+    </sql-query>
+
+    <sql-query name="SV_TestQuery">
+        <![CDATA[
+        select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER,JOINING_DATE from STUDENT_DETAILS
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_TestQuery__count">
+        <![CDATA[
+        select count(*) from (select STUDENT_ID,STUDENT_NAME,FATHER_NAME,CONTACT_NUMBER,JOINING_DATE from STUDENT_DETAILS) wmTempTable
+        ]]>
+    </sql-query>
+
+    <sql-query name="SV_AcademicSubjectsByStandard">
+        <![CDATA[
+        select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECTS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD=stnd.STANDARD_ID
+        ]]>
+    <query-param name="year" type="java.sql.Date"/>
+    <query-param name="standard" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="SV_AcademicSubjectsByStandard__count">
+        <![CDATA[
+        select count(*) from (select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECTS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD=stnd.STANDARD_ID) wmTempTable
+        ]]>
+    <query-param name="year" type="java.sql.Date"/>
+    <query-param name="standard" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="SV_CountOfStudentsInAcademics">
+        <![CDATA[
+        select count(STUDENT_ID),STANDARD from STUDENT_ACADEMICS where STANDARD=:standard and ACADEMIC_YEAR=:year group by STANDARD
+        ]]>
+    <query-param name="standard" type="java.lang.String"/>
+    <query-param name="year" type="java.sql.Date"/>
+    </sql-query>
+
+    <sql-query name="SV_CountOfStudentsInAcademics__count">
+        <![CDATA[
+        select count(*) from (select count(STUDENT_ID),STANDARD from STUDENT_ACADEMICS where STANDARD=:standard and ACADEMIC_YEAR=:year group by STANDARD) wmTempTable
+        ]]>
+    <query-param name="standard" type="java.lang.String"/>
+    <query-param name="year" type="java.sql.Date"/>
+    </sql-query>
 </hibernate-mapping>

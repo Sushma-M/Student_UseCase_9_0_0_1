@@ -1,6 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <context:component-scan base-package="com.student_usecase.school_db.controller,com.student_usecase.school_db.service,com.student_usecase.school_db.dao" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.student_usecase.school_db.controller,com.student_usecase.school_db.service,com.student_usecase.school_db.dao"/>
     <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
@@ -11,26 +16,30 @@
         </property>
         <property name="ignoreUnresolvablePlaceholders" value="true"/>
     </bean>
-    <bean class="com.zaxxer.hikari.HikariConfig" id="School_DBHikariConfig">
+
+    <bean id="School_DBHikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="jdbcUrl" value="${School_DB.url}"/>
         <property name="driverClassName" value="${School_DB.driverClass}"/>
         <property name="username" value="${School_DB.username}"/>
         <property name="password" value="${School_DB.password}"/>
         <property name="maximumPoolSize" value="${School_DB.maxPoolSize}"/>
         <property name="minimumIdle" value="${School_DB.minPoolSize}"/>
-        <property name="connectionTimeout" value="30000"/>
-        <property name="validationTimeout" value="5000"/>
-        <property name="idleTimeout" value="600000"/>
-        <property name="maxLifetime" value="1800000"/>
-        <property name="initializationFailTimeout" value="-1"/>
-        <property name="leakDetectionThreshold" value="120000"/>
-        <property name="registerMbeans" value="false"/>
+        <property name="connectionTimeout" value="30000" />
+        <property name="validationTimeout" value="5000" />
+        <property name="idleTimeout" value="600000" />
+        <property name="maxLifetime" value="1800000" />
+        <property name="initializationFailTimeout" value="-1" />
+        <property name="leakDetectionThreshold" value="120000" />
+        <property name="registerMbeans" value="false" />
     </bean>
-    <bean class="com.zaxxer.hikari.HikariDataSource" lazy-init="true" destroy-method="close" id="School_DBWMManagedDataSource">
+
+    <bean id="School_DBWMManagedDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close" lazy-init="true">
         <constructor-arg ref="School_DBHikariConfig"/>
     </bean>
-    <bean class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor" id="School_DBEntityInterceptor"/>
-    <bean class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean" id="School_DBSessionFactory">
+
+    <bean id="School_DBEntityInterceptor" class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor"/>
+
+    <bean id="School_DBSessionFactory" class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean">
         <property name="dataSource" ref="School_DBDataSource"/>
         <property name="packagesToScan" value="com.student_usecase.school_db"/>
         <property name="entityInterceptor" ref="School_DBEntityInterceptor"/>
@@ -41,8 +50,9 @@
                 </value>
             </list>
         </property>
+
         <property name="customTypes">
-            <array value-type="com.wavemaker.runtime.data.CustomType" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc">
+            <array value-type="com.wavemaker.runtime.data.CustomType">
                 <ref bean="dateTimeCustomType"/>
             </array>
         </property>
@@ -66,26 +76,26 @@
                 <prop key="hibernate.schema_update.unique_constraint_strategy">
                     skip
                 </prop>
-                <prop key="hibernate.id.new_generator_mappings">true</prop>
             </props>
         </property>
     </bean>
-    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="School_DBTransactionManager">
+    <bean id="School_DBTransactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="School_DBSessionFactory"/>
         <property name="defaultTimeout" value="${School_DB.transactionTimeout}"/>
     </bean>
-    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="School_DBTemplate">
+    <bean id="School_DBTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
         <property name="sessionFactory" ref="School_DBSessionFactory"/>
     </bean>
-    <bean class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl" id="School_DBWMQueryExecutor">
+    <bean id="School_DBWMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
         <property name="template" ref="School_DBTemplate"/>
     </bean>
-    <bean class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl" id="School_DBWMProcedureExecutor">
+    <bean id="School_DBWMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
         <property name="template" ref="School_DBTemplate"/>
-        <property name="serviceId" value="School_DB"/>
+        <property name="serviceId" value="School_DB" />
     </bean>
-    <bean class="com.wavemaker.commons.data.type.WMPersistentLocalDateTime" id="persistentLocalDateTimeType"/>
-    <bean class="com.wavemaker.runtime.data.CustomType" id="dateTimeCustomType">
+
+    <bean id="persistentLocalDateTimeType" class="com.wavemaker.commons.data.type.WMPersistentLocalDateTime"/>
+    <bean id="dateTimeCustomType" class="com.wavemaker.runtime.data.CustomType">
         <property name="type" ref="persistentLocalDateTimeType"/>
         <property name="keys">
             <list>
@@ -94,22 +104,27 @@
             </list>
         </property>
     </bean>
-    <bean class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" id="School_DBPageableHandlerMethodResolver">
+    <bean id="School_DBPageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
         <property name="pageParameterName" value="page"/>
         <property name="sizeParameterName" value="size"/>
         <property name="oneIndexedParameters" value="true"/>
         <property name="maxPageSize" value="${School_DB.maxPageSize}"/>
         <property name="fallbackPageable">
-            <bean class="org.springframework.data.domain.PageRequest">
-                <constructor-arg value="0"/>
-                <constructor-arg value="20"/>
+            <bean  class="org.springframework.data.domain.PageRequest">
+                <constructor-arg  value="0"/>
+                <constructor-arg  value="20"/>
             </bean>
         </property>
     </bean>
-    <bean class="com.wavemaker.runtime.data.datasource.WMDataSource" id="School_DBDataSource">
+
+    <bean id="School_DBDataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
         <property name="dataSourceType" value="${School_DB.dataSourceType}"/>
         <property name="jndiName" value="${School_DB.jndiName}"/>
         <property name="serviceId" value="School_DB"/>
     </bean>
-    <tx:annotation-driven xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+
+
+    <tx:annotation-driven/>
+
 </beans>
+

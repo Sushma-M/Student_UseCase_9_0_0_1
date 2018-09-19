@@ -11,7 +11,55 @@
   "dbName" : "School_DB",
   "port" : "",
   "schemaName" : null,
-  "tableFilter" : [ ],
+  "tableFilter" : [ {
+    "table" : "ACADEMIC_SUBJECTS",
+    "schema" : null
+  }, {
+    "table" : "ACADEMIC_TEST_SUBJECTS",
+    "schema" : null
+  }, {
+    "table" : "ACADEMIC_YEAR",
+    "schema" : null
+  }, {
+    "table" : "ACADEMICS",
+    "schema" : null
+  }, {
+    "table" : "EMPLOYEE_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "GRADE_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "RESULTS",
+    "schema" : null
+  }, {
+    "table" : "STANDARD_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "STUDENT_ACADEMICS",
+    "schema" : null
+  }, {
+    "table" : "STUDENT_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "STUDENT_IDENTIFICATION",
+    "schema" : null
+  }, {
+    "table" : "SUBJECT_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "TEST_CONDUCTED",
+    "schema" : null
+  }, {
+    "table" : "TEST_DETAILS",
+    "schema" : null
+  }, {
+    "table" : "USER_LOGIN",
+    "schema" : null
+  }, {
+    "table" : "VIEW_RESULTS",
+    "schema" : null
+  } ],
   "schemaFilter" : [ ".*" ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,
@@ -23,9 +71,9 @@
   "dataSourceType" : "WM_MANAGED_DATASOURCE",
   "jndiName" : "",
   "reloadInfo" : {
-    "reload" : true,
-    "reason" : "MIGRATION_FAILED",
-    "message" : "Source code re-generation needed with respect to spring upgrade"
+    "reload" : false,
+    "reason" : null,
+    "message" : null
   },
   "readOnly" : false
 }

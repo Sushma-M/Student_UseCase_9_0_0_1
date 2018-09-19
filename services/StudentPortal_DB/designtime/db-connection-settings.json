@@ -11,40 +11,7 @@
   "dbName" : "StudentPortal_DB",
   "port" : "",
   "schemaName" : null,
-  "tableFilter" : [ {
-    "table" : "ACADEMICS",
-    "schema" : null
-  }, {
-    "table" : "ACADEMIC_SUBJECTS",
-    "schema" : null
-  }, {
-    "table" : "ACADEMIC_TEST_SUBJECTS",
-    "schema" : null
-  }, {
-    "table" : "GRADE_DETAILS",
-    "schema" : null
-  }, {
-    "table" : "RESULTS",
-    "schema" : null
-  }, {
-    "table" : "STANDARD_DETAILS",
-    "schema" : null
-  }, {
-    "table" : "STUDENT_ACADEMICS",
-    "schema" : null
-  }, {
-    "table" : "STUDENT_DETAILS",
-    "schema" : null
-  }, {
-    "table" : "SUBJECTS",
-    "schema" : null
-  }, {
-    "table" : "TEST_DETAILS",
-    "schema" : null
-  }, {
-    "table" : "USER_LOGIN",
-    "schema" : null
-  } ],
+  "tableFilter" : [ ],
   "schemaFilter" : [ ".*" ],
   "impersonateUser" : false,
   "activeDirectoryDomain" : null,
@@ -56,9 +23,9 @@
   "dataSourceType" : "WM_MANAGED_DATASOURCE",
   "jndiName" : "",
   "reloadInfo" : {
-    "reload" : true,
-    "reason" : "MIGRATION_FAILED",
-    "message" : "Source code re-generation needed with respect to spring upgrade"
+    "reload" : false,
+    "reason" : null,
+    "message" : null
   },
   "readOnly" : false
 }

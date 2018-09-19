@@ -7,38 +7,14 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
-      "fieldName" : "totalMarks",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "big_integer",
-      "length" : 255,
-      "name" : "TOTAL_MARKS",
-      "nullable" : true,
-      "oldName" : "TOTAL_MARKS",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 27,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
+      "constraintList" : null,
       "fieldName" : "academicYear",
-      "foreignKey" : false,
+      "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "string",
@@ -46,143 +22,201 @@
       "name" : "ACADEMIC_YEAR",
       "nullable" : false,
       "oldName" : "ACADEMIC_YEAR",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "standardId",
-      "foreignKey" : false,
+      "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "STANDARD_ID",
       "nullable" : false,
       "oldName" : "STANDARD_ID",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
       "partOfUniqueKey" : false,
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
-      "fieldName" : "studentId",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STUDENT_ID",
-      "nullable" : false,
-      "oldName" : "STUDENT_ID",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "studentName",
+      "constraintList" : null,
+      "fieldName" : "classRoom",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "string",
       "length" : 255,
-      "name" : "STUDENT_NAME",
-      "nullable" : false,
-      "oldName" : "STUDENT_NAME",
+      "name" : "CLASS_ROOM",
+      "nullable" : true,
+      "oldName" : "CLASS_ROOM",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
-      "fieldName" : "testId",
+      "constraintList" : null,
+      "fieldName" : "classTeacher",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
-      "javaType" : "integer",
+      "javaType" : "string",
       "length" : 255,
-      "name" : "TEST_ID",
-      "nullable" : false,
-      "oldName" : "TEST_ID",
+      "name" : "CLASS_TEACHER",
+      "nullable" : true,
+      "oldName" : "CLASS_TEACHER",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 10,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
-      "sqlType" : "number",
+      "sequenceSchema" : null,
+      "sqlType" : "string",
       "unique" : false
     } ],
     "constraints" : [ ],
-    "entityName" : "ViewResults",
-    "fullyQualifiedName" : "com.student_usecase.school_db.ViewResults",
-    "name" : "VIEW_RESULTS",
-    "oldName" : "VIEW_RESULTS",
+    "entityName" : "Academics",
+    "fullyQualifiedName" : "com.student_usecase.school_db.Academics",
+    "name" : "ACADEMICS",
+    "oldName" : "ACADEMICS",
     "primaryKey" : {
-      "columns" : [ ],
-      "composite" : false,
+      "columns" : [ "ACADEMIC_YEAR", "STANDARD_ID" ],
+      "composite" : true,
       "generator" : {
         "generatorType" : "assigned",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
-      "name" : null,
+      "name" : "PRIMARY",
       "virtual" : false
     },
-    "relations" : [ ],
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "academicYearByAcademicYear",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      } ],
+      "name" : "FK_ACADEMICS_TO_ACADEMICtXssM",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMIC_YEAR",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "standardDetails",
+      "mappings" : [ {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      } ],
+      "name" : "FK_ACADEMICS_TO_STANDARDjy42t",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STANDARD_DETAILS",
+      "virtual" : false
+    }, {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : true,
+      "fieldName" : "academicSubjectses",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      }, {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      } ],
+      "name" : "FK_ACADEMIC_SUBJECTS_TO_LUYp3",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMIC_SUBJECTS",
+      "virtual" : false
+    }, {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : true,
+      "fieldName" : "studentAcademicses",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      }, {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      } ],
+      "name" : "FK_STUDENT_ACADEMICS_TO_qLftV",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STUDENT_ACADEMICS",
+      "virtual" : false
+    } ],
     "schema" : null,
-    "type" : "VIEW"
+    "type" : "TABLE"
   }, {
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "academicYear",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -196,24 +230,26 @@
       "partOfForeignKey" : true,
       "partOfPrimaryKey" : true,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "subjectId",
       "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "SUBJECT_ID",
       "nullable" : false,
       "oldName" : "SUBJECT_ID",
@@ -224,21 +260,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "standardId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "STANDARD_ID",
       "nullable" : false,
       "oldName" : "STANDARD_ID",
@@ -249,15 +287,17 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "subjectTeacher",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -271,9 +311,10 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     } ],
@@ -287,12 +328,30 @@
       "composite" : true,
       "generator" : {
         "generatorType" : "assigned",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
     },
     "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "subjectDetails",
+      "mappings" : [ {
+        "sourceColumn" : "SUBJECT_ID",
+        "targetColumn" : "SUBJECT_ID"
+      } ],
+      "name" : "FK_ACADEMIC_SUBJECTS_TO_vYqYW",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMIC_SUBJECTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "SUBJECT_DETAILS",
+      "virtual" : false
+    }, {
       "cardinality" : "ManyToOne",
       "columnsUniqueKey" : false,
       "composite" : true,
@@ -307,25 +366,10 @@
       "name" : "FK_ACADEMIC_SUBJECTS_TO_LUYp3",
       "primary" : true,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "ACADEMIC_SUBJECTS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "ACADEMICS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "subjectDetails",
-      "mappings" : [ {
-        "sourceColumn" : "SUBJECT_ID",
-        "targetColumn" : "SUBJECT_ID"
-      } ],
-      "name" : "FK_ACADEMIC_SUBJECTS_TO_vYqYW",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMIC_SUBJECTS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "SUBJECT_DETAILS",
       "virtual" : false
     }, {
       "cardinality" : "OneToMany",
@@ -345,6 +389,7 @@
       "name" : "FK_ACADEMIC_TEST_SUBJECTGRO6a",
       "primary" : false,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "ACADEMIC_SUBJECTS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "ACADEMIC_TEST_SUBJECTS",
@@ -356,802 +401,12 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "userId",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "USER_ID",
-      "nullable" : false,
-      "oldName" : "USER_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "userName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "USER_NAME",
-      "nullable" : true,
-      "oldName" : "USER_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "password",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "PASSWORD",
-      "nullable" : true,
-      "oldName" : "PASSWORD",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "role",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "ROLE",
-      "nullable" : true,
-      "oldName" : "ROLE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    } ],
-    "constraints" : [ ],
-    "entityName" : "UserLogin",
-    "fullyQualifiedName" : "com.student_usecase.school_db.UserLogin",
-    "name" : "USER_LOGIN",
-    "oldName" : "USER_LOGIN",
-    "primaryKey" : {
-      "columns" : [ "USER_ID" ],
-      "composite" : false,
-      "generator" : {
-        "generatorType" : "assigned",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "employeeDetails",
-      "mappings" : [ {
-        "sourceColumn" : "USER_ID",
-        "targetColumn" : "EMP_ID"
-      } ],
-      "name" : "FK_USER_LOGIN_TO_EMPLOYEvxmPp",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "USER_LOGIN",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "EMPLOYEE_DETAILS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardId",
-      "foreignKey" : false,
-      "generatorType" : "identity",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STANDARD_ID",
-      "nullable" : false,
-      "oldName" : "STANDARD_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardCode",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "STANDARD_CODE",
-      "nullable" : false,
-      "oldName" : "STANDARD_CODE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "STANDARD_NAME",
-      "nullable" : false,
-      "oldName" : "STANDARD_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    } ],
-    "constraints" : [ {
-      "columns" : [ "STANDARD_CODE" ],
-      "composite" : false,
-      "name" : "UK_STANDARD_DETAILS_STAN4v4IK",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "StandardDetails",
-    "fullyQualifiedName" : "com.student_usecase.school_db.StandardDetails",
-    "name" : "STANDARD_DETAILS",
-    "oldName" : "STANDARD_DETAILS",
-    "primaryKey" : {
-      "columns" : [ "STANDARD_ID" ],
-      "composite" : false,
-      "generator" : {
-        "generatorType" : "identity",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "academicses",
-      "mappings" : [ {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      } ],
-      "name" : "FK_ACADEMICS_TO_STANDARDjy42t",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "STANDARD_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMICS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "subjectId",
-      "foreignKey" : false,
-      "generatorType" : "identity",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "SUBJECT_ID",
-      "nullable" : false,
-      "oldName" : "SUBJECT_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "subjectName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "SUBJECT_NAME",
-      "nullable" : false,
-      "oldName" : "SUBJECT_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : true
-    } ],
-    "constraints" : [ {
-      "columns" : [ "SUBJECT_NAME" ],
-      "composite" : false,
-      "name" : "UK_SUBJECT_DETAILS_SUBJEuF03L",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "SubjectDetails",
-    "fullyQualifiedName" : "com.student_usecase.school_db.SubjectDetails",
-    "name" : "SUBJECT_DETAILS",
-    "oldName" : "SUBJECT_DETAILS",
-    "primaryKey" : {
-      "columns" : [ "SUBJECT_ID" ],
-      "composite" : false,
-      "generator" : {
-        "generatorType" : "identity",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "academicSubjectses",
-      "mappings" : [ {
-        "sourceColumn" : "SUBJECT_ID",
-        "targetColumn" : "SUBJECT_ID"
-      } ],
-      "name" : "FK_ACADEMIC_SUBJECTS_TO_vYqYW",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "SUBJECT_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMIC_SUBJECTS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "studentId",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STUDENT_ID",
-      "nullable" : false,
-      "oldName" : "STUDENT_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "studentName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "STUDENT_NAME",
-      "nullable" : false,
-      "oldName" : "STUDENT_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "dateOfBirth",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "date",
-      "length" : 10,
-      "name" : "DATE_OF_BIRTH",
-      "nullable" : false,
-      "oldName" : "DATE_OF_BIRTH",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "date",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "fatherName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "FATHER_NAME",
-      "nullable" : false,
-      "oldName" : "FATHER_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "address",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "ADDRESS",
-      "nullable" : false,
-      "oldName" : "ADDRESS",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "joiningDate",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "date",
-      "length" : 10,
-      "name" : "JOINING_DATE",
-      "nullable" : false,
-      "oldName" : "JOINING_DATE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "date",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "profilePic",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "blob",
-      "length" : 255,
-      "name" : "PROFILE_PIC",
-      "nullable" : true,
-      "oldName" : "PROFILE_PIC",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "blob",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "status",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "STATUS",
-      "nullable" : false,
-      "oldName" : "STATUS",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "contactNumber",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 10,
-      "name" : "CONTACT_NUMBER",
-      "nullable" : false,
-      "oldName" : "CONTACT_NUMBER",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "gender",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 6,
-      "name" : "GENDER",
-      "nullable" : true,
-      "oldName" : "GENDER",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "studentIdentificationId",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STUDENT_IDENTIFICATION_ID",
-      "nullable" : true,
-      "oldName" : "STUDENT_IDENTIFICATION_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    } ],
-    "constraints" : [ {
-      "columns" : [ "STUDENT_IDENTIFICATION_ID" ],
-      "composite" : false,
-      "name" : "UK_STUDENT_DETAILS_STUDENQs2b",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "StudentDetails",
-    "fullyQualifiedName" : "com.student_usecase.school_db.StudentDetails",
-    "name" : "STUDENT_DETAILS",
-    "oldName" : "STUDENT_DETAILS",
-    "primaryKey" : {
-      "columns" : [ "STUDENT_ID" ],
-      "composite" : false,
-      "generator" : {
-        "generatorType" : "assigned",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToOne",
-      "columnsUniqueKey" : true,
-      "composite" : false,
-      "fieldName" : "studentIdentification",
-      "mappings" : [ {
-        "sourceColumn" : "STUDENT_IDENTIFICATION_ID",
-        "targetColumn" : "IDENTIFICATION_ID"
-      } ],
-      "name" : "FK_STUDENT_DETAILS_TO_STMYTtN",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "STUDENT_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STUDENT_IDENTIFICATION",
-      "virtual" : false
-    }, {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "studentAcademicses",
-      "mappings" : [ {
-        "sourceColumn" : "STUDENT_ID",
-        "targetColumn" : "STUDENT_ID"
-      } ],
-      "name" : "FK_STUDENT_ACADEMICS_TO_Wph5y",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "STUDENT_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STUDENT_ACADEMICS",
-      "virtual" : false
-    }, {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "resultses",
-      "mappings" : [ {
-        "sourceColumn" : "STUDENT_ID",
-        "targetColumn" : "STUDENT_ID"
-      } ],
-      "name" : "FK_RESULTS_TO_STUDENT_DEGRGsr",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "STUDENT_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "RESULTS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "testId",
-      "foreignKey" : false,
-      "generatorType" : "identity",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "TEST_ID",
-      "nullable" : false,
-      "oldName" : "TEST_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "testName",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "TEST_NAME",
-      "nullable" : false,
-      "oldName" : "TEST_NAME",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : true
-    } ],
-    "constraints" : [ {
-      "columns" : [ "TEST_NAME" ],
-      "composite" : false,
-      "name" : "UK_TEST_DETAILS_TEST_NAME",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "TestDetails",
-    "fullyQualifiedName" : "com.student_usecase.school_db.TestDetails",
-    "name" : "TEST_DETAILS",
-    "oldName" : "TEST_DETAILS",
-    "primaryKey" : {
-      "columns" : [ "TEST_ID" ],
-      "composite" : false,
-      "generator" : {
-        "generatorType" : "identity",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "academicTestSubjectses",
-      "mappings" : [ {
-        "sourceColumn" : "TEST_ID",
-        "targetColumn" : "TEST_ID"
-      } ],
-      "name" : "FK_ACADEMIC_TEST_SUBJECTkgNBV",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "TEST_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMIC_TEST_SUBJECTS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
+      "constraintList" : null,
       "fieldName" : "academicYear",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1165,24 +420,26 @@
       "partOfForeignKey" : true,
       "partOfPrimaryKey" : true,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "testId",
       "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "TEST_ID",
       "nullable" : false,
       "oldName" : "TEST_ID",
@@ -1193,21 +450,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "subjectId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "SUBJECT_ID",
       "nullable" : false,
       "oldName" : "SUBJECT_ID",
@@ -1218,21 +477,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "standardId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "STANDARD_ID",
       "nullable" : false,
       "oldName" : "STANDARD_ID",
@@ -1243,15 +504,17 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "maxMarks",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1265,9 +528,10 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     } ],
@@ -1281,12 +545,30 @@
       "composite" : true,
       "generator" : {
         "generatorType" : "assigned",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
     },
     "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "testDetails",
+      "mappings" : [ {
+        "sourceColumn" : "TEST_ID",
+        "targetColumn" : "TEST_ID"
+      } ],
+      "name" : "FK_ACADEMIC_TEST_SUBJECTkgNBV",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMIC_TEST_SUBJECTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "TEST_DETAILS",
+      "virtual" : false
+    }, {
       "cardinality" : "ManyToOne",
       "columnsUniqueKey" : false,
       "composite" : true,
@@ -1304,25 +586,10 @@
       "name" : "FK_ACADEMIC_TEST_SUBJECTGRO6a",
       "primary" : true,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "ACADEMIC_TEST_SUBJECTS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "ACADEMIC_SUBJECTS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "testDetails",
-      "mappings" : [ {
-        "sourceColumn" : "TEST_ID",
-        "targetColumn" : "TEST_ID"
-      } ],
-      "name" : "FK_ACADEMIC_TEST_SUBJECTkgNBV",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMIC_TEST_SUBJECTS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "TEST_DETAILS",
       "virtual" : false
     }, {
       "cardinality" : "OneToMany",
@@ -1345,6 +612,7 @@
       "name" : "FK_TEST_CONDUCTED_TO_ACAsSyPO",
       "primary" : false,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "ACADEMIC_TEST_SUBJECTS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "TEST_CONDUCTED",
@@ -1356,17 +624,145 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
+      "fieldName" : "academicYear",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "ACADEMIC_YEAR",
+      "nullable" : false,
+      "oldName" : "ACADEMIC_YEAR",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 0,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "startYear",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "START_YEAR",
+      "nullable" : false,
+      "oldName" : "START_YEAR",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "endYear",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "END_YEAR",
+      "nullable" : false,
+      "oldName" : "END_YEAR",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    } ],
+    "constraints" : [ {
+      "columns" : [ "START_YEAR" ],
+      "composite" : false,
+      "name" : "UK_ACADEMIC_YEAR_START_YEAR",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "AcademicYear",
+    "fullyQualifiedName" : "com.student_usecase.school_db.AcademicYear",
+    "name" : "ACADEMIC_YEAR",
+    "oldName" : "ACADEMIC_YEAR",
+    "primaryKey" : {
+      "columns" : [ "ACADEMIC_YEAR" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "assigned",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "academicses",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      } ],
+      "name" : "FK_ACADEMICS_TO_ACADEMICtXssM",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "ACADEMIC_YEAR",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMICS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
       "fieldName" : "empId",
       "foreignKey" : false,
       "generatorType" : "identity",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "EMP_ID",
       "nullable" : false,
       "oldName" : "EMP_ID",
@@ -1377,15 +773,17 @@
       "precision" : 10,
       "primaryKey" : true,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "firstname",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1399,18 +797,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "lastname",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1424,18 +824,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "state",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1449,18 +851,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "city",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1474,18 +878,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "street",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1499,18 +905,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "zip",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1524,24 +932,26 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "dateOfBirth",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "date",
-      "length" : 10,
+      "length" : 0,
       "name" : "DATE_OF_BIRTH",
       "nullable" : true,
       "oldName" : "DATE_OF_BIRTH",
@@ -1549,18 +959,20 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "date",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "jobTitle",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1574,24 +986,26 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "picUrl",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "blob",
-      "length" : 255,
+      "length" : -1,
       "name" : "PIC_URL",
       "nullable" : true,
       "oldName" : "PIC_URL",
@@ -1599,24 +1013,26 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "blob",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "managerId",
       "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "MANAGER_ID",
       "nullable" : true,
       "oldName" : "MANAGER_ID",
@@ -1627,6 +1043,7 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     } ],
@@ -1640,28 +1057,13 @@
       "composite" : false,
       "generator" : {
         "generatorType" : "identity",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
     },
     "relations" : [ {
-      "cardinality" : "OneToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "userLogin",
-      "mappings" : [ {
-        "sourceColumn" : "EMP_ID",
-        "targetColumn" : "USER_ID"
-      } ],
-      "name" : "FK_USER_LOGIN_TO_EMPLOYEvxmPp",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "EMPLOYEE_DETAILS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "USER_LOGIN",
-      "virtual" : false
-    }, {
       "cardinality" : "ManyToOne",
       "columnsUniqueKey" : false,
       "composite" : false,
@@ -1673,6 +1075,7 @@
       "name" : "FK_EMPLOYEE_DETAILS_TO_EMFB1X",
       "primary" : true,
       "selfRelation" : true,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "EMPLOYEE_DETAILS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "EMPLOYEE_DETAILS",
@@ -1689,9 +1092,27 @@
       "name" : "FK_EMPLOYEE_DETAILS_TO_EMFB1X",
       "primary" : false,
       "selfRelation" : true,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "EMPLOYEE_DETAILS",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "EMPLOYEE_DETAILS",
+      "virtual" : false
+    }, {
+      "cardinality" : "OneToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "userLogin",
+      "mappings" : [ {
+        "sourceColumn" : "EMP_ID",
+        "targetColumn" : "USER_ID"
+      } ],
+      "name" : "FK_USER_LOGIN_TO_EMPLOYEvxmPp",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "EMPLOYEE_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "USER_LOGIN",
       "virtual" : false
     } ],
     "schema" : null,
@@ -1700,11 +1121,220 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
+      "fieldName" : "gradeId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "GRADE_ID",
+      "nullable" : false,
+      "oldName" : "GRADE_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "grade",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 2,
+      "name" : "GRADE",
+      "nullable" : false,
+      "oldName" : "GRADE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "minValue",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "MIN_VALUE",
+      "nullable" : false,
+      "oldName" : "MIN_VALUE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "maxValue",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "MAX_VALUE",
+      "nullable" : false,
+      "oldName" : "MAX_VALUE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    } ],
+    "constraints" : [ {
+      "columns" : [ "GRADE" ],
+      "composite" : false,
+      "name" : "UK_GRADE_DETAILS_GRADE",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "GradeDetails",
+    "fullyQualifiedName" : "com.student_usecase.school_db.GradeDetails",
+    "name" : "GRADE_DETAILS",
+    "oldName" : "GRADE_DETAILS",
+    "primaryKey" : {
+      "columns" : [ "GRADE_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "resultses",
+      "mappings" : [ {
+        "sourceColumn" : "GRADE_ID",
+        "targetColumn" : "GRADE_ID"
+      } ],
+      "name" : "FK_RESULTS_TO_GRADE_DETAiHx5M",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "GRADE_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "RESULTS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "testConductedId",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "TEST_CONDUCTED_ID",
+      "nullable" : false,
+      "oldName" : "TEST_CONDUCTED_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STUDENT_ID",
+      "nullable" : false,
+      "oldName" : "STUDENT_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
       "fieldName" : "academicYear",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -1718,24 +1348,26 @@
       "partOfForeignKey" : true,
       "partOfPrimaryKey" : true,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "standardId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "STANDARD_ID",
       "nullable" : false,
       "oldName" : "STANDARD_ID",
@@ -1746,21 +1378,1142 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
+      "fieldName" : "marksSecured",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "short",
+      "length" : 0,
+      "name" : "MARKS_SECURED",
+      "nullable" : true,
+      "oldName" : "MARKS_SECURED",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 5,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "gradeId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "GRADE_ID",
+      "nullable" : true,
+      "oldName" : "GRADE_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "presence",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "boolean",
+      "length" : 0,
+      "name" : "PRESENCE",
+      "nullable" : true,
+      "oldName" : "PRESENCE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 1,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "boolean",
+      "unique" : false
+    } ],
+    "constraints" : [ ],
+    "entityName" : "Results",
+    "fullyQualifiedName" : "com.student_usecase.school_db.Results",
+    "name" : "RESULTS",
+    "oldName" : "RESULTS",
+    "primaryKey" : {
+      "columns" : [ "TEST_CONDUCTED_ID", "STUDENT_ID", "ACADEMIC_YEAR", "STANDARD_ID" ],
+      "composite" : true,
+      "generator" : {
+        "generatorType" : "assigned",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "gradeDetails",
+      "mappings" : [ {
+        "sourceColumn" : "GRADE_ID",
+        "targetColumn" : "GRADE_ID"
+      } ],
+      "name" : "FK_RESULTS_TO_GRADE_DETAiHx5M",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "RESULTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "GRADE_DETAILS",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "studentDetails",
+      "mappings" : [ {
+        "sourceColumn" : "STUDENT_ID",
+        "targetColumn" : "STUDENT_ID"
+      } ],
+      "name" : "FK_RESULTS_TO_STUDENT_DEGRGsr",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "RESULTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STUDENT_DETAILS",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : true,
+      "fieldName" : "testConducted",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      }, {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      }, {
+        "sourceColumn" : "TEST_CONDUCTED_ID",
+        "targetColumn" : "TEST_CONDUCTED_ID"
+      } ],
+      "name" : "FK_RESULTS_TO_TEST_CONDUPWxUc",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "RESULTS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "TEST_CONDUCTED",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "standardId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STANDARD_ID",
+      "nullable" : false,
+      "oldName" : "STANDARD_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "standardCode",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "STANDARD_CODE",
+      "nullable" : false,
+      "oldName" : "STANDARD_CODE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "standardName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "STANDARD_NAME",
+      "nullable" : false,
+      "oldName" : "STANDARD_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    } ],
+    "constraints" : [ {
+      "columns" : [ "STANDARD_CODE" ],
+      "composite" : false,
+      "name" : "UK_STANDARD_DETAILS_STAN4v4IK",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "StandardDetails",
+    "fullyQualifiedName" : "com.student_usecase.school_db.StandardDetails",
+    "name" : "STANDARD_DETAILS",
+    "oldName" : "STANDARD_DETAILS",
+    "primaryKey" : {
+      "columns" : [ "STANDARD_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "academicses",
+      "mappings" : [ {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      } ],
+      "name" : "FK_ACADEMICS_TO_STANDARDjy42t",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STANDARD_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMICS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STUDENT_ID",
+      "nullable" : false,
+      "oldName" : "STUDENT_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "academicYear",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "ACADEMIC_YEAR",
+      "nullable" : false,
+      "oldName" : "ACADEMIC_YEAR",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "standardId",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STANDARD_ID",
+      "nullable" : false,
+      "oldName" : "STANDARD_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "rollNumber",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "ROLL_NUMBER",
+      "nullable" : false,
+      "oldName" : "ROLL_NUMBER",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    } ],
+    "constraints" : [ {
+      "columns" : [ "ROLL_NUMBER" ],
+      "composite" : false,
+      "name" : "UK_STUDENT_ACADEMICS_ROLZpRpH",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "StudentAcademics",
+    "fullyQualifiedName" : "com.student_usecase.school_db.StudentAcademics",
+    "name" : "STUDENT_ACADEMICS",
+    "oldName" : "STUDENT_ACADEMICS",
+    "primaryKey" : {
+      "columns" : [ "STUDENT_ID", "ACADEMIC_YEAR", "STANDARD_ID" ],
+      "composite" : true,
+      "generator" : {
+        "generatorType" : "assigned",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "studentDetails",
+      "mappings" : [ {
+        "sourceColumn" : "STUDENT_ID",
+        "targetColumn" : "STUDENT_ID"
+      } ],
+      "name" : "FK_STUDENT_ACADEMICS_TO_Wph5y",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STUDENT_ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STUDENT_DETAILS",
+      "virtual" : false
+    }, {
+      "cardinality" : "ManyToOne",
+      "columnsUniqueKey" : false,
+      "composite" : true,
+      "fieldName" : "academics",
+      "mappings" : [ {
+        "sourceColumn" : "ACADEMIC_YEAR",
+        "targetColumn" : "ACADEMIC_YEAR"
+      }, {
+        "sourceColumn" : "STANDARD_ID",
+        "targetColumn" : "STANDARD_ID"
+      } ],
+      "name" : "FK_STUDENT_ACADEMICS_TO_qLftV",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STUDENT_ACADEMICS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMICS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STUDENT_ID",
+      "nullable" : false,
+      "oldName" : "STUDENT_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "STUDENT_NAME",
+      "nullable" : false,
+      "oldName" : "STUDENT_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "dateOfBirth",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "date",
+      "length" : 0,
+      "name" : "DATE_OF_BIRTH",
+      "nullable" : false,
+      "oldName" : "DATE_OF_BIRTH",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "date",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "fatherName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "FATHER_NAME",
+      "nullable" : false,
+      "oldName" : "FATHER_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "address",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "ADDRESS",
+      "nullable" : false,
+      "oldName" : "ADDRESS",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "joiningDate",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "date",
+      "length" : 0,
+      "name" : "JOINING_DATE",
+      "nullable" : false,
+      "oldName" : "JOINING_DATE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "date",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "profilePic",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "blob",
+      "length" : -1,
+      "name" : "PROFILE_PIC",
+      "nullable" : true,
+      "oldName" : "PROFILE_PIC",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "blob",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "status",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "STATUS",
+      "nullable" : false,
+      "oldName" : "STATUS",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "contactNumber",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 10,
+      "name" : "CONTACT_NUMBER",
+      "nullable" : false,
+      "oldName" : "CONTACT_NUMBER",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "gender",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 6,
+      "name" : "GENDER",
+      "nullable" : true,
+      "oldName" : "GENDER",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentIdentificationId",
+      "foreignKey" : true,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STUDENT_IDENTIFICATION_ID",
+      "nullable" : true,
+      "oldName" : "STUDENT_IDENTIFICATION_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    } ],
+    "constraints" : [ {
+      "columns" : [ "STUDENT_IDENTIFICATION_ID" ],
+      "composite" : false,
+      "name" : "UK_STUDENT_DETAILS_STUDENQs2b",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "StudentDetails",
+    "fullyQualifiedName" : "com.student_usecase.school_db.StudentDetails",
+    "name" : "STUDENT_DETAILS",
+    "oldName" : "STUDENT_DETAILS",
+    "primaryKey" : {
+      "columns" : [ "STUDENT_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToOne",
+      "columnsUniqueKey" : true,
+      "composite" : false,
+      "fieldName" : "studentIdentification",
+      "mappings" : [ {
+        "sourceColumn" : "STUDENT_IDENTIFICATION_ID",
+        "targetColumn" : "IDENTIFICATION_ID"
+      } ],
+      "name" : "FK_STUDENT_DETAILS_TO_STMYTtN",
+      "primary" : true,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : false,
+      "sourceTable" : "STUDENT_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STUDENT_IDENTIFICATION",
+      "virtual" : false
+    }, {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "resultses",
+      "mappings" : [ {
+        "sourceColumn" : "STUDENT_ID",
+        "targetColumn" : "STUDENT_ID"
+      } ],
+      "name" : "FK_RESULTS_TO_STUDENT_DEGRGsr",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STUDENT_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "RESULTS",
+      "virtual" : false
+    }, {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "studentAcademicses",
+      "mappings" : [ {
+        "sourceColumn" : "STUDENT_ID",
+        "targetColumn" : "STUDENT_ID"
+      } ],
+      "name" : "FK_STUDENT_ACADEMICS_TO_Wph5y",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STUDENT_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "STUDENT_ACADEMICS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "identificationId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "IDENTIFICATION_ID",
+      "nullable" : false,
+      "oldName" : "IDENTIFICATION_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "identificationType",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "IDENTIFICATION_TYPE",
+      "nullable" : true,
+      "oldName" : "IDENTIFICATION_TYPE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "identificationNumber",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "IDENTIFICATION_NUMBER",
+      "nullable" : true,
+      "oldName" : "IDENTIFICATION_NUMBER",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : true
+    } ],
+    "constraints" : [ {
+      "columns" : [ "IDENTIFICATION_NUMBER" ],
+      "composite" : false,
+      "name" : "UK_STUDENT_IDENTIFICATIOTdy4I",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "StudentIdentification",
+    "fullyQualifiedName" : "com.student_usecase.school_db.StudentIdentification",
+    "name" : "STUDENT_IDENTIFICATION",
+    "oldName" : "STUDENT_IDENTIFICATION",
+    "primaryKey" : {
+      "columns" : [ "IDENTIFICATION_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToOne",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "studentDetails",
+      "mappings" : [ {
+        "sourceColumn" : "IDENTIFICATION_ID",
+        "targetColumn" : "STUDENT_IDENTIFICATION_ID"
+      } ],
+      "name" : "FK_STUDENT_DETAILS_TO_STMYTtN",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "STUDENT_IDENTIFICATION",
+      "targetColumnsUniqueKey" : true,
+      "targetTable" : "STUDENT_DETAILS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "subjectId",
+      "foreignKey" : false,
+      "generatorType" : "identity",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "SUBJECT_ID",
+      "nullable" : false,
+      "oldName" : "SUBJECT_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : true,
+      "precision" : 10,
+      "primaryKey" : true,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : true
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "subjectName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "SUBJECT_NAME",
+      "nullable" : false,
+      "oldName" : "SUBJECT_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : true,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : true
+    } ],
+    "constraints" : [ {
+      "columns" : [ "SUBJECT_NAME" ],
+      "composite" : false,
+      "name" : "UK_SUBJECT_DETAILS_SUBJEuF03L",
+      "schemaName" : null,
+      "type" : "UNIQUE",
+      "virtual" : false
+    } ],
+    "entityName" : "SubjectDetails",
+    "fullyQualifiedName" : "com.student_usecase.school_db.SubjectDetails",
+    "name" : "SUBJECT_DETAILS",
+    "oldName" : "SUBJECT_DETAILS",
+    "primaryKey" : {
+      "columns" : [ "SUBJECT_ID" ],
+      "composite" : false,
+      "generator" : {
+        "generatorType" : "identity",
+        "generatorValue" : null,
+        "schemaName" : null
+      },
+      "name" : "PRIMARY",
+      "virtual" : false
+    },
+    "relations" : [ {
+      "cardinality" : "OneToMany",
+      "columnsUniqueKey" : false,
+      "composite" : false,
+      "fieldName" : "academicSubjectses",
+      "mappings" : [ {
+        "sourceColumn" : "SUBJECT_ID",
+        "targetColumn" : "SUBJECT_ID"
+      } ],
+      "name" : "FK_ACADEMIC_SUBJECTS_TO_vYqYW",
+      "primary" : false,
+      "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "SUBJECT_DETAILS",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "ACADEMIC_SUBJECTS",
+      "virtual" : false
+    } ],
+    "schema" : null,
+    "type" : "TABLE"
+  }, {
+    "catalog" : "School_DB",
+    "columns" : [ {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "academicYear",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "ACADEMIC_YEAR",
+      "nullable" : false,
+      "oldName" : "ACADEMIC_YEAR",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "standardId",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STANDARD_ID",
+      "nullable" : false,
+      "oldName" : "STANDARD_ID",
+      "partOfAnyRelation" : true,
+      "partOfForeignKey" : true,
+      "partOfPrimaryKey" : true,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
       "fieldName" : "testConductedId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "TEST_CONDUCTED_ID",
       "nullable" : false,
       "oldName" : "TEST_CONDUCTED_ID",
@@ -1771,21 +2524,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "subjectId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "SUBJECT_ID",
       "nullable" : false,
       "oldName" : "SUBJECT_ID",
@@ -1796,21 +2551,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "testId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
+      "length" : 0,
       "name" : "TEST_ID",
       "nullable" : false,
       "oldName" : "TEST_ID",
@@ -1821,21 +2578,23 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
+      "constraintList" : null,
       "fieldName" : "testConductedOn",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "date",
-      "length" : 10,
+      "length" : 0,
       "name" : "TEST_CONDUCTED_ON",
       "nullable" : true,
       "oldName" : "TEST_CONDUCTED_ON",
@@ -1843,9 +2602,10 @@
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "date",
       "unique" : false
     } ],
@@ -1859,7 +2619,8 @@
       "composite" : true,
       "generator" : {
         "generatorType" : "assigned",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
@@ -1885,6 +2646,7 @@
       "name" : "FK_TEST_CONDUCTED_TO_ACAsSyPO",
       "primary" : true,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "TEST_CONDUCTED",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "ACADEMIC_TEST_SUBJECTS",
@@ -1907,6 +2669,7 @@
       "name" : "FK_RESULTS_TO_TEST_CONDUPWxUc",
       "primary" : false,
       "selfRelation" : false,
+      "sourceColumnsNotUniqueKey" : true,
       "sourceTable" : "TEST_CONDUCTED",
       "targetColumnsUniqueKey" : false,
       "targetTable" : "RESULTS",
@@ -1918,182 +2681,21 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
-      "fieldName" : "studentId",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STUDENT_ID",
-      "nullable" : false,
-      "oldName" : "STUDENT_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "academicYear",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "ACADEMIC_YEAR",
-      "nullable" : false,
-      "oldName" : "ACADEMIC_YEAR",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardId",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STANDARD_ID",
-      "nullable" : false,
-      "oldName" : "STANDARD_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "rollNumber",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "ROLL_NUMBER",
-      "nullable" : false,
-      "oldName" : "ROLL_NUMBER",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
-    } ],
-    "constraints" : [ {
-      "columns" : [ "ROLL_NUMBER" ],
-      "composite" : false,
-      "name" : "UK_STUDENT_ACADEMICS_ROLZpRpH",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "StudentAcademics",
-    "fullyQualifiedName" : "com.student_usecase.school_db.StudentAcademics",
-    "name" : "STUDENT_ACADEMICS",
-    "oldName" : "STUDENT_ACADEMICS",
-    "primaryKey" : {
-      "columns" : [ "STUDENT_ID", "ACADEMIC_YEAR", "STANDARD_ID" ],
-      "composite" : true,
-      "generator" : {
-        "generatorType" : "assigned",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : true,
-      "fieldName" : "academics",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      }, {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      } ],
-      "name" : "FK_STUDENT_ACADEMICS_TO_qLftV",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "STUDENT_ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMICS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "studentDetails",
-      "mappings" : [ {
-        "sourceColumn" : "STUDENT_ID",
-        "targetColumn" : "STUDENT_ID"
-      } ],
-      "name" : "FK_STUDENT_ACADEMICS_TO_Wph5y",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "STUDENT_ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STUDENT_DETAILS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "gradeId",
+      "constraintList" : null,
+      "fieldName" : "testId",
       "foreignKey" : false,
       "generatorType" : "identity",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
-      "name" : "GRADE_ID",
+      "length" : 0,
+      "name" : "TEST_ID",
       "nullable" : false,
-      "oldName" : "GRADE_ID",
+      "oldName" : "TEST_ID",
       "partOfAnyRelation" : true,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : true,
@@ -2101,101 +2703,56 @@
       "precision" : 10,
       "primaryKey" : true,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : "",
+        "type" : "user-defined"
       },
-      "fieldName" : "grade",
+      "constraintList" : null,
+      "fieldName" : "testName",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "string",
-      "length" : 2,
-      "name" : "GRADE",
+      "length" : 255,
+      "name" : "TEST_NAME",
       "nullable" : false,
-      "oldName" : "GRADE",
+      "oldName" : "TEST_NAME",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : true,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "minValue",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "MIN_VALUE",
-      "nullable" : false,
-      "oldName" : "MIN_VALUE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "maxValue",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "MAX_VALUE",
-      "nullable" : false,
-      "oldName" : "MAX_VALUE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
     } ],
     "constraints" : [ {
-      "columns" : [ "GRADE" ],
+      "columns" : [ "TEST_NAME" ],
       "composite" : false,
-      "name" : "UK_GRADE_DETAILS_GRADE",
+      "name" : "UK_TEST_DETAILS_TEST_NAME",
+      "schemaName" : null,
       "type" : "UNIQUE",
       "virtual" : false
     } ],
-    "entityName" : "GradeDetails",
-    "fullyQualifiedName" : "com.student_usecase.school_db.GradeDetails",
-    "name" : "GRADE_DETAILS",
-    "oldName" : "GRADE_DETAILS",
+    "entityName" : "TestDetails",
+    "fullyQualifiedName" : "com.student_usecase.school_db.TestDetails",
+    "name" : "TEST_DETAILS",
+    "oldName" : "TEST_DETAILS",
     "primaryKey" : {
-      "columns" : [ "GRADE_ID" ],
+      "columns" : [ "TEST_ID" ],
       "composite" : false,
       "generator" : {
         "generatorType" : "identity",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
@@ -2204,17 +2761,18 @@
       "cardinality" : "OneToMany",
       "columnsUniqueKey" : false,
       "composite" : false,
-      "fieldName" : "resultses",
+      "fieldName" : "academicTestSubjectses",
       "mappings" : [ {
-        "sourceColumn" : "GRADE_ID",
-        "targetColumn" : "GRADE_ID"
+        "sourceColumn" : "TEST_ID",
+        "targetColumn" : "TEST_ID"
       } ],
-      "name" : "FK_RESULTS_TO_GRADE_DETAiHx5M",
+      "name" : "FK_ACADEMIC_TEST_SUBJECTkgNBV",
       "primary" : false,
       "selfRelation" : false,
-      "sourceTable" : "GRADE_DETAILS",
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "TEST_DETAILS",
       "targetColumnsUniqueKey" : false,
-      "targetTable" : "RESULTS",
+      "targetTable" : "ACADEMIC_TEST_SUBJECTS",
       "virtual" : false
     } ],
     "schema" : null,
@@ -2223,538 +2781,125 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "academicYear",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "ACADEMIC_YEAR",
-      "nullable" : false,
-      "oldName" : "ACADEMIC_YEAR",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardId",
+      "constraintList" : null,
+      "fieldName" : "userId",
       "foreignKey" : true,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
-      "name" : "STANDARD_ID",
+      "length" : 0,
+      "name" : "USER_ID",
       "nullable" : false,
-      "oldName" : "STANDARD_ID",
+      "oldName" : "USER_ID",
       "partOfAnyRelation" : true,
       "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "classRoom",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "CLASS_ROOM",
-      "nullable" : true,
-      "oldName" : "CLASS_ROOM",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "classTeacher",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "CLASS_TEACHER",
-      "nullable" : true,
-      "oldName" : "CLASS_TEACHER",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    } ],
-    "constraints" : [ ],
-    "entityName" : "Academics",
-    "fullyQualifiedName" : "com.student_usecase.school_db.Academics",
-    "name" : "ACADEMICS",
-    "oldName" : "ACADEMICS",
-    "primaryKey" : {
-      "columns" : [ "ACADEMIC_YEAR", "STANDARD_ID" ],
-      "composite" : true,
-      "generator" : {
-        "generatorType" : "assigned",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : true,
-      "fieldName" : "academicSubjectses",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      }, {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      } ],
-      "name" : "FK_ACADEMIC_SUBJECTS_TO_LUYp3",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMIC_SUBJECTS",
-      "virtual" : false
-    }, {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : true,
-      "fieldName" : "studentAcademicses",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      }, {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      } ],
-      "name" : "FK_STUDENT_ACADEMICS_TO_qLftV",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STUDENT_ACADEMICS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "academicYearByAcademicYear",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      } ],
-      "name" : "FK_ACADEMICS_TO_ACADEMICtXssM",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMIC_YEAR",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "standardDetails",
-      "mappings" : [ {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      } ],
-      "name" : "FK_ACADEMICS_TO_STANDARDjy42t",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMICS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STANDARD_DETAILS",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "testConductedId",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "TEST_CONDUCTED_ID",
-      "nullable" : false,
-      "oldName" : "TEST_CONDUCTED_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "studentId",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STUDENT_ID",
-      "nullable" : false,
-      "oldName" : "STUDENT_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "academicYear",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "string",
-      "length" : 255,
-      "name" : "ACADEMIC_YEAR",
-      "nullable" : false,
-      "oldName" : "ACADEMIC_YEAR",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "standardId",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "STANDARD_ID",
-      "nullable" : false,
-      "oldName" : "STANDARD_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : null
-      },
-      "fieldName" : "marksSecured",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "short",
-      "length" : 255,
-      "name" : "MARKS_SECURED",
-      "nullable" : true,
-      "oldName" : "MARKS_SECURED",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 5,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "gradeId",
-      "foreignKey" : true,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "GRADE_ID",
-      "nullable" : true,
-      "oldName" : "GRADE_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : true,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 10,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "number",
-      "unique" : false
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "presence",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "boolean",
-      "length" : 255,
-      "name" : "PRESENCE",
-      "nullable" : true,
-      "oldName" : "PRESENCE",
-      "partOfAnyRelation" : false,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : false,
-      "precision" : 19,
-      "primaryKey" : false,
-      "scale" : 0,
-      "sqlType" : "boolean",
-      "unique" : false
-    } ],
-    "constraints" : [ ],
-    "entityName" : "Results",
-    "fullyQualifiedName" : "com.student_usecase.school_db.Results",
-    "name" : "RESULTS",
-    "oldName" : "RESULTS",
-    "primaryKey" : {
-      "columns" : [ "TEST_CONDUCTED_ID", "STUDENT_ID", "ACADEMIC_YEAR", "STANDARD_ID" ],
-      "composite" : true,
-      "generator" : {
-        "generatorType" : "assigned",
-        "generatorValue" : null
-      },
-      "name" : "PRIMARY",
-      "virtual" : false
-    },
-    "relations" : [ {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "gradeDetails",
-      "mappings" : [ {
-        "sourceColumn" : "GRADE_ID",
-        "targetColumn" : "GRADE_ID"
-      } ],
-      "name" : "FK_RESULTS_TO_GRADE_DETAiHx5M",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "RESULTS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "GRADE_DETAILS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "studentDetails",
-      "mappings" : [ {
-        "sourceColumn" : "STUDENT_ID",
-        "targetColumn" : "STUDENT_ID"
-      } ],
-      "name" : "FK_RESULTS_TO_STUDENT_DEGRGsr",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "RESULTS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "STUDENT_DETAILS",
-      "virtual" : false
-    }, {
-      "cardinality" : "ManyToOne",
-      "columnsUniqueKey" : false,
-      "composite" : true,
-      "fieldName" : "testConducted",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      }, {
-        "sourceColumn" : "STANDARD_ID",
-        "targetColumn" : "STANDARD_ID"
-      }, {
-        "sourceColumn" : "TEST_CONDUCTED_ID",
-        "targetColumn" : "TEST_CONDUCTED_ID"
-      } ],
-      "name" : "FK_RESULTS_TO_TEST_CONDUPWxUc",
-      "primary" : true,
-      "selfRelation" : false,
-      "sourceTable" : "RESULTS",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "TEST_CONDUCTED",
-      "virtual" : false
-    } ],
-    "schema" : null,
-    "type" : "TABLE"
-  }, {
-    "catalog" : "School_DB",
-    "columns" : [ {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "identificationId",
-      "foreignKey" : false,
-      "generatorType" : "identity",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "IDENTIFICATION_ID",
-      "nullable" : false,
-      "oldName" : "IDENTIFICATION_ID",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
       "partOfPrimaryKey" : true,
       "partOfUniqueKey" : true,
       "precision" : 10,
       "primaryKey" : true,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : true
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "identificationType",
+      "constraintList" : null,
+      "fieldName" : "userName",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "string",
       "length" : 255,
-      "name" : "IDENTIFICATION_TYPE",
+      "name" : "USER_NAME",
       "nullable" : true,
-      "oldName" : "IDENTIFICATION_TYPE",
+      "oldName" : "USER_NAME",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
       "partOfUniqueKey" : false,
-      "precision" : 19,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
       "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "identificationNumber",
+      "constraintList" : null,
+      "fieldName" : "password",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "string",
       "length" : 255,
-      "name" : "IDENTIFICATION_NUMBER",
+      "name" : "PASSWORD",
       "nullable" : true,
-      "oldName" : "IDENTIFICATION_NUMBER",
+      "oldName" : "PASSWORD",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 19,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "string",
-      "unique" : true
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "role",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "ROLE",
+      "nullable" : true,
+      "oldName" : "ROLE",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
     } ],
-    "constraints" : [ {
-      "columns" : [ "IDENTIFICATION_NUMBER" ],
-      "composite" : false,
-      "name" : "UK_STUDENT_IDENTIFICATIOTdy4I",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "StudentIdentification",
-    "fullyQualifiedName" : "com.student_usecase.school_db.StudentIdentification",
-    "name" : "STUDENT_IDENTIFICATION",
-    "oldName" : "STUDENT_IDENTIFICATION",
+    "constraints" : [ ],
+    "entityName" : "UserLogin",
+    "fullyQualifiedName" : "com.student_usecase.school_db.UserLogin",
+    "name" : "USER_LOGIN",
+    "oldName" : "USER_LOGIN",
     "primaryKey" : {
-      "columns" : [ "IDENTIFICATION_ID" ],
+      "columns" : [ "USER_ID" ],
       "composite" : false,
       "generator" : {
-        "generatorType" : "identity",
-        "generatorValue" : null
+        "generatorType" : "assigned",
+        "generatorValue" : null,
+        "schemaName" : null
       },
       "name" : "PRIMARY",
       "virtual" : false
@@ -2763,17 +2908,18 @@
       "cardinality" : "OneToOne",
       "columnsUniqueKey" : false,
       "composite" : false,
-      "fieldName" : "studentDetails",
+      "fieldName" : "employeeDetails",
       "mappings" : [ {
-        "sourceColumn" : "IDENTIFICATION_ID",
-        "targetColumn" : "STUDENT_IDENTIFICATION_ID"
+        "sourceColumn" : "USER_ID",
+        "targetColumn" : "EMP_ID"
       } ],
-      "name" : "FK_STUDENT_DETAILS_TO_STMYTtN",
-      "primary" : false,
+      "name" : "FK_USER_LOGIN_TO_EMPLOYEvxmPp",
+      "primary" : true,
       "selfRelation" : false,
-      "sourceTable" : "STUDENT_IDENTIFICATION",
-      "targetColumnsUniqueKey" : true,
-      "targetTable" : "STUDENT_DETAILS",
+      "sourceColumnsNotUniqueKey" : true,
+      "sourceTable" : "USER_LOGIN",
+      "targetColumnsUniqueKey" : false,
+      "targetTable" : "EMPLOYEE_DETAILS",
       "virtual" : false
     } ],
     "schema" : null,
@@ -2782,11 +2928,39 @@
     "catalog" : "School_DB",
     "columns" : [ {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
+      "constraintList" : null,
+      "fieldName" : "totalMarks",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "big_integer",
+      "length" : 0,
+      "name" : "TOTAL_MARKS",
+      "nullable" : true,
+      "oldName" : "TOTAL_MARKS",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 27,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
       "fieldName" : "academicYear",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -2796,56 +2970,33 @@
       "name" : "ACADEMIC_YEAR",
       "nullable" : false,
       "oldName" : "ACADEMIC_YEAR",
-      "partOfAnyRelation" : true,
-      "partOfForeignKey" : false,
-      "partOfPrimaryKey" : true,
-      "partOfUniqueKey" : true,
-      "precision" : 19,
-      "primaryKey" : true,
-      "scale" : 0,
-      "sqlType" : "string",
-      "unique" : true
-    }, {
-      "columnValue" : {
-        "type" : "user-defined",
-        "insertable" : true,
-        "updatable" : true,
-        "defaultValue" : ""
-      },
-      "fieldName" : "startYear",
-      "foreignKey" : false,
-      "generatorType" : "assigned",
-      "generatorValue" : null,
-      "javaType" : "integer",
-      "length" : 255,
-      "name" : "START_YEAR",
-      "nullable" : false,
-      "oldName" : "START_YEAR",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
-      "partOfUniqueKey" : true,
-      "precision" : 10,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
       "primaryKey" : false,
       "scale" : 0,
-      "sqlType" : "number",
-      "unique" : true
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
     }, {
       "columnValue" : {
-        "type" : "user-defined",
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : ""
+        "defaultValue" : null,
+        "type" : "user-defined"
       },
-      "fieldName" : "endYear",
+      "constraintList" : null,
+      "fieldName" : "standardId",
       "foreignKey" : false,
       "generatorType" : "assigned",
       "generatorValue" : null,
       "javaType" : "integer",
-      "length" : 255,
-      "name" : "END_YEAR",
+      "length" : 0,
+      "name" : "STANDARD_ID",
       "nullable" : false,
-      "oldName" : "END_YEAR",
+      "oldName" : "STANDARD_ID",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
       "partOfPrimaryKey" : false,
@@ -2853,48 +3004,109 @@
       "precision" : 10,
       "primaryKey" : false,
       "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentId",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "STUDENT_ID",
+      "nullable" : false,
+      "oldName" : "STUDENT_ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "studentName",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "string",
+      "length" : 255,
+      "name" : "STUDENT_NAME",
+      "nullable" : false,
+      "oldName" : "STUDENT_NAME",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 0,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "string",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : null,
+        "type" : "user-defined"
+      },
+      "constraintList" : null,
+      "fieldName" : "testId",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "TEST_ID",
+      "nullable" : false,
+      "oldName" : "TEST_ID",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
       "sqlType" : "number",
       "unique" : false
     } ],
-    "constraints" : [ {
-      "columns" : [ "START_YEAR" ],
-      "composite" : false,
-      "name" : "UK_ACADEMIC_YEAR_START_YEAR",
-      "type" : "UNIQUE",
-      "virtual" : false
-    } ],
-    "entityName" : "AcademicYear",
-    "fullyQualifiedName" : "com.student_usecase.school_db.AcademicYear",
-    "name" : "ACADEMIC_YEAR",
-    "oldName" : "ACADEMIC_YEAR",
+    "constraints" : [ ],
+    "entityName" : "ViewResults",
+    "fullyQualifiedName" : "com.student_usecase.school_db.ViewResults",
+    "name" : "VIEW_RESULTS",
+    "oldName" : "VIEW_RESULTS",
     "primaryKey" : {
-      "columns" : [ "ACADEMIC_YEAR" ],
+      "columns" : [ ],
       "composite" : false,
       "generator" : {
         "generatorType" : "assigned",
-        "generatorValue" : null
+        "generatorValue" : null,
+        "schemaName" : null
       },
-      "name" : "PRIMARY",
+      "name" : null,
       "virtual" : false
     },
-    "relations" : [ {
-      "cardinality" : "OneToMany",
-      "columnsUniqueKey" : false,
-      "composite" : false,
-      "fieldName" : "academicses",
-      "mappings" : [ {
-        "sourceColumn" : "ACADEMIC_YEAR",
-        "targetColumn" : "ACADEMIC_YEAR"
-      } ],
-      "name" : "FK_ACADEMICS_TO_ACADEMICtXssM",
-      "primary" : false,
-      "selfRelation" : false,
-      "sourceTable" : "ACADEMIC_YEAR",
-      "targetColumnsUniqueKey" : false,
-      "targetTable" : "ACADEMICS",
-      "virtual" : false
-    } ],
+    "relations" : [ ],
     "schema" : null,
-    "type" : "TABLE"
+    "type" : "VIEW"
   } ]
 }

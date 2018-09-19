@@ -11,6 +11,7 @@ import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ForeignKey;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
@@ -24,7 +25,7 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "`STUDENT_ACADEMICS`", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"`ROLL_NUMBER`"})})
+        @UniqueConstraint(name = "`UK_STUDENT_ACADEMICS_ROLZpRpH`", columnNames = {"`ROLL_NUMBER`"})})
 @IdClass(StudentAcademicsId.class)
 public class StudentAcademics implements Serializable {
 
@@ -32,8 +33,8 @@ public class StudentAcademics implements Serializable {
     private String academicYear;
     private Integer standardId;
     private int rollNumber;
-    private Academics academics;
     private StudentDetails studentDetails;
+    private Academics academics;
 
     @Id
     @Column(name = "`STUDENT_ID`", nullable = false, scale = 0, precision = 10)
@@ -74,8 +75,25 @@ public class StudentAcademics implements Serializable {
         this.rollNumber = rollNumber;
     }
 
-    
-    
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "`STUDENT_ID`", referencedColumnName = "`STUDENT_ID`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_STUDENT_ACADEMICS_TO_Wph5y`"))
+    public StudentDetails getStudentDetails() {
+        return this.studentDetails;
+    }
+
+    public void setStudentDetails(StudentDetails studentDetails) {
+        if(studentDetails != null) {
+            this.studentId = studentDetails.getStudentId();
+        }
+
+        this.studentDetails = studentDetails;
+    }
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumns(value = {
+            @JoinColumn(name = "`ACADEMIC_YEAR`", referencedColumnName = "`ACADEMIC_YEAR`", insertable = false, updatable = false),
+            @JoinColumn(name = "`STANDARD_ID`", referencedColumnName = "`STANDARD_ID`", insertable = false, updatable = false)},
+        foreignKey = @ForeignKey(name = "`FK_STUDENT_ACADEMICS_TO_qLftV`"))
     public Academics getAcademics() {
         return this.academics;
     }
@@ -87,20 +105,6 @@ public class StudentAcademics implements Serializable {
         }
 
         this.academics = academics;
-    }
-
-    
-    
-    public StudentDetails getStudentDetails() {
-        return this.studentDetails;
-    }
-
-    public void setStudentDetails(StudentDetails studentDetails) {
-        if(studentDetails != null) {
-            this.studentId = studentDetails.getStudentId();
-        }
-
-        this.studentDetails = studentDetails;
     }
 
     @Override

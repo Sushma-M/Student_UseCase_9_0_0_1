@@ -17,7 +17,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 /**
@@ -25,7 +24,7 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity
 @Table(name = "`STUDENT_IDENTIFICATION`", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"`IDENTIFICATION_NUMBER`"})})
+        @UniqueConstraint(name = "`UK_STUDENT_IDENTIFICATIOTdy4I`", columnNames = {"`IDENTIFICATION_NUMBER`"})})
 public class StudentIdentification implements Serializable {
 
     private Integer identificationId;
@@ -62,7 +61,6 @@ public class StudentIdentification implements Serializable {
         this.identificationNumber = identificationNumber;
     }
 
-    @Transient
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "studentIdentification")
     public StudentDetails getStudentDetails() {
         return this.studentDetails;
