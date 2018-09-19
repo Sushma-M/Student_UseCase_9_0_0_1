@@ -1,0 +1,19 @@
+[ {
+  "name" : "student",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "StudentDetails"
+  }
+}, {
+  "name" : "management",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "MasterDetails"
+  }
+}, {
+  "name" : "professor",
+  "description" : null,
+  "roleConfig" : {
+    "landingPage" : "MasterDetails"
+  }
+} ]

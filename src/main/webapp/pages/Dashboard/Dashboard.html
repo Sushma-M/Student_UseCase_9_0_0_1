@@ -1,0 +1,80 @@
+<wm-page data-ng-controller="DashboardPageController" pagetitle="Dashboard" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="page_content1"> 
+            <wm-layoutgrid name="layoutgrid1"> 
+                <wm-gridrow name="gridrow1"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn1"> 
+                        <wm-composite name="composite1"> 
+                            <wm-label class="col-md-3 control-label" name="label1" caption="Academic Year"></wm-label> 
+                            <wm-container class="col-md-9" name="container1"> 
+                                <wm-select name="select_AcademicYear" dataset="bind:Variables.LV_AcademicDetails.dataSet" datafield="academicYear" displayfield="academicYear"></wm-select> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn2" padding="unset unset unset 2.5em"> 
+                        <wm-composite name="composite2"> 
+                            <wm-label class="col-md-3 control-label" name="label2" caption="Standard"></wm-label> 
+                            <wm-container class="col-md-9" name="container2"> 
+                                <wm-select name="select_Standard" dataset="bind:Variables.LV_StandardsByAcademicYear.dataSet" datafield="standardId" displayfield="standardDetails.standardName"></wm-select> 
+                            </wm-container> 
+                        </wm-composite> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow2"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn3"> 
+                        <wm-table title="STUDENT RESULTS" dataset="bind:Variables.School_DBStudentResultsData.dataSet" navigation="Pager" name="grid1" iconclass="fa fa-users" exportformat="EXCEL" nodatamessage="Select Academic Year and Standard"> 
+                            <wm-table-column binding="studentDetails.studentName" caption="Student Name" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="StudentDetails"></wm-table-column> 
+                            <wm-table-column binding="customField" caption="Subject" type="string" readonly="true" col-class="text-uppercase" edit-widget-type="text" searchable="false" show="true">
+                                 {{row.testConducted.academicTestSubjects.academicSubjects.subjectDetails.subjectName}} 
+                            </wm-table-column> 
+                            <wm-table-column binding="marksSecured" caption="Marks Secured" type="short" generator="assigned" readonly="true" edit-widget-type="number" show="true"></wm-table-column> 
+                            <wm-table-column binding="gradeDetails.grade" caption="Details Grade" type="string" generator="assigned" readonly="true" edit-widget-type="text" show="true" related-entity-name="GradeDetails"></wm-table-column> 
+                        </wm-table> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"> 
+                        <wm-composite name="composite3" margin="unset unset unset 2.5em"> 
+                            <wm-label class="col-md-3 control-label" name="label8" caption="Test Name"></wm-label> 
+                            <wm-container class="col-md-9" name="container3"> 
+                                <wm-select name="select_Test" dataset="bind:Variables.LV_TestDetails.dataSet" datafield="testId" displayfield="testDetails.testName"></wm-select> 
+                            </wm-container> 
+                        </wm-composite> 
+                        <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-3 lg-3" class="list-card" dataset="bind:Variables.School_DBExecuteSV_Top3StudentsFromAllStandards.dataSet" navigation="Classic" name="livelist1" groupby="livelist1groupby(rowData)" showcount="true" nodatamessage="Select Academic Year and Test Name" title="Top 3 Student Results"> 
+                            <wm-listtemplate layout="media" name="listtemplate1"> 
+                                <wm-card name="card1"> 
+                                    <wm-card-content fontsize="0.8" fontunit="em" name="card_content1"> 
+                                        <wm-layoutgrid columns="2" name="layoutgrid2"> 
+                                            <wm-gridrow name="gridrow5"> 
+                                                <wm-gridcolumn colwidth="6" columnwidth="12" padding="unset 1.25em" class="col-xs-6" name="gridcolumn10" height="60px"> 
+                                                    <wm-label name="ID" caption="bind:Variables.School_DBExecuteSV_Top3StudentsFromAllStandards.dataSet.STUDENT_ID" fontunit="em" class="text-muted p" margin="unset unset 0px unset" whitespace="nowrap"></wm-label> 
+                                                    <wm-label name="Name" caption="bind:Variables.School_DBExecuteSV_Top3StudentsFromAllStandards.dataSet.STUDENT_NAME" fontunit="em" color="#000" class="h4" margin="0px unset" whitespace="nowrap"></wm-label> 
+                                                    <wm-label name="JobTitle" caption="bind:Variables.School_DBExecuteSV_Top3StudentsFromAllStandards.dataSet.TOTAL_MARKS" class="h5" margin="0px unset unset unset" whitespace="nowrap"></wm-label> 
+                                                    <wm-anchor name="PhoneNumber" caption="" class="h5" hyperlink="tel:" margin="0px unset" whitespace="nowrap"></wm-anchor> 
+                                                    <wm-anchor name="EmailID" class="p text-muted" hyperlink="mailto://" caption="" whitespace="nowrap"></wm-anchor> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                    </wm-card-content> 
+                                </wm-card> 
+                            </wm-listtemplate> 
+                        </wm-list> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow3"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5" padding="unset 0.5em unset unset"> 
+                        <wm-chart type="Column" title="Performance Chart" iconclass="wi wi-bar-chart" name="chart1" subheading="for Selected Standard" dataset="bind:Variables.SV_StudentResultsByStandard.dataSet" staggerlabels="true" reducexticks="false" aggregation="none" xaxisdatakey="STUDENTNAME" yaxisdatakey="MARKS_SECURED"></wm-chart> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6" padding="unset unset unset 0.5em"> 
+                        <wm-chart type="Donut" title="Donut Chart" iconclass="wi wi-donut-large" name="chart3" dataset="bind:Variables.SV_AnalysisPerGrade.dataSet" xaxisdatakey="grade" yaxisdatakey="studentId" labeltype="key" theme="Retro" centerlabel="Per Grade Analysis"></wm-chart> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow4"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn7"></wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn8"></wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

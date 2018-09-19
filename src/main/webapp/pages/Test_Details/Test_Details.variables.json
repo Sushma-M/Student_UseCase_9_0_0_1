@@ -1,0 +1,63 @@
+{
+  "School_DB_TestDetailsData" : {
+    "_id" : "wm-School_DB_TestDetailsData-wm.LiveVariable-1475132378225",
+    "name" : "School_DB_TestDetailsData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "TestDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "School_DB",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "orderBy" : "testId asc",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "testId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "TEST_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "testName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "TEST_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "TestDetails",
+      "fullyQualifiedName" : "com.student_usecase.school_db.TestDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "testId" ]
+    },
+    "tableName" : "TEST_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "package" : "com.student_usecase.school_db.TestDetails"
+  }
+}

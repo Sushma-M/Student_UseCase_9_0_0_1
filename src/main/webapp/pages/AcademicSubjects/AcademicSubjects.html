@@ -1,0 +1,59 @@
+<wm-partial data-ng-controller="AcademicSubjectsPageController" name="partial1"> 
+    <wm-layoutgrid name="layoutgrid9"> 
+        <wm-gridrow name="gridrow17_1"> 
+            <wm-gridcolumn columnwidth="8" name="gridcolumn32"> 
+                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" navigation="Pager" name="livelist_academicSubjects" groupby="livelist_academicSubjectsgroupby(rowData)"> 
+                    <wm-listtemplate layout="inline" name="listtemplate3"> 
+                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container5"> 
+                            <wm-layoutgrid name="layoutgrid6_1"> 
+                                <wm-gridrow name="gridrow13"> 
+                                    <wm-gridcolumn columnwidth="3" name="gridcolumn26" padding="unset 1em unset unset"> 
+                                        <wm-label name="subName" caption="bind:Variables.School_DBAcademicSubjectsData.dataSet.data[$i].subjectDetails.subjectName" class="truncate text-uppercase" whitespace="nowrap" width="250px"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="9" name="gridcolumn27"> 
+                                        <wm-label name="Name" class="p" caption="bind:Variables.School_DBAcademicSubjectsData.dataSet.data[$i].subjectTeacher" fontunit="px"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-container> 
+                    </wm-listtemplate> 
+                </wm-list> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn columnwidth="4" name="gridcolumn33" padding="8em unset unset 3.5em"> 
+                <wm-layoutgrid name="layoutgrid10"> 
+                    <wm-gridrow name="gridrow19"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn36"> 
+                            <wm-button class="btn-default" caption="Add Record" type="button" margin="2em 0.5em unset unset" name="button_academicSubjects" iconclass="wi wi-plus" on-click="Widgets.dialog4.open()" backgroundcolor="#f27163" bordercolor="#f05c4b"></wm-button> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+    <wm-view class="dialog-view" name="view4"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Add Academic Subjects" iconclass="wi wi-edit" name="dialog4"> 
+            <wm-dialogactions name="dialogactions4" show="false"></wm-dialogactions> 
+            <wm-liveform novalidate="false" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" captionalign="left" captionposition="left" name="liveform_academicSubjects" errormessage=""> 
+                <wm-layoutgrid columns="1" name="layoutgrid12_2"> 
+                    <wm-gridrow name="gridrow29_2"> 
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn55"> 
+                            <wm-form-field name="academics" displayname="Academic Details" show="true" primary-key="true" generator="assigned" key="academics" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" displayexpression="academicYearByAcademicYear.academicYear + '  (' + standardDetails.standardCode+')'"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow30_2"> 
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn56"> 
+                            <wm-form-field name="subjectDetails" displayname="Subject Details" show="true" primary-key="true" generator="assigned" key="subjectDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="subjectName"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow31"> 
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn57"> 
+                            <wm-form-field name="subjectTeacher" displayname="Subject Teacher" show="true" primary-key="false" generator="assigned" key="subjectTeacher" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+                <wm-form-action key="custom" display-name="Close" show="true" class="" iconclass="wi wi-close" title="Close" action="Widgets.dialog4.close()" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+            </wm-liveform> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-partial>

@@ -1,0 +1,16 @@
+<wm-partial data-ng-controller="Test_DetailsPageController" name="partial1"> 
+    <wm-layoutgrid name="layoutgrid7_2"> 
+        <wm-gridrow name="gridrow13_3"> 
+            <wm-gridcolumn columnwidth="8" name="gridcolumn22_2"> 
+                <wm-table editmode="inline" title="TEST DETAILS" dataset="bind:Variables.School_DB_TestDetailsData.dataSet" navigation="None" name="grid_testDetails" iconclass="fa fa-modx"> 
+                    <wm-table-column binding="testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+                </wm-table> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn columnwidth="4" name="gridcolumn23_1"></wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

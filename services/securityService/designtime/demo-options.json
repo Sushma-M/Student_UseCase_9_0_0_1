@@ -1,0 +1,11 @@
+{
+  "users" : [ {
+    "userid" : "management",
+    "password" : "management",
+    "roles" : [ "management" ]
+  }, {
+    "userid" : "student",
+    "password" : "student",
+    "roles" : [ "student" ]
+  } ]
+}

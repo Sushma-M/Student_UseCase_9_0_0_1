@@ -1,0 +1,49 @@
+<wm-partial data-ng-controller="Subject_DetailsPageController" name="partial1"> 
+    <wm-layoutgrid name="layoutgrid7"> 
+        <wm-gridrow name="gridrow12"> 
+            <wm-gridcolumn columnwidth="8" name="gridcolumn21_2" horizontalalign="right"> 
+                <wm-button class="btn-default" caption="Add New Record" type="button" margin="unset 7em unset 0.5em" name="button_addsubject" iconclass="wi wi-plus" on-click="button_addsubjectClick($event, $scope)" show="true"></wm-button> 
+                <wm-layoutgrid name="layoutgrid6"> 
+                    <wm-gridrow name="gridrow11"> 
+                        <wm-gridcolumn columnwidth="5" name="gridcolumn19_1"> 
+                            <wm-composite name="composite_subjectName" horizontalalign="left" show="false" width="25em" padding="1.5em unset unset unset"> 
+                                <wm-container class="col-md-9" name="container2_1"> 
+                                    <wm-text name="txt_subjectName" placeholder="Subject Name" updateon="default" on-keydown="txt_subjectNameKeydown($event, $scope)" class="text-uppercase" regexp="^[a-zA-Z ]+$" required="true"></wm-text> 
+                                </wm-container> 
+                            </wm-composite> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="4" name="gridcolumn20_3" horizontalalign="left"> 
+                            <wm-button class="btn-default" caption="Add" type="button" name="button_addNew" on-click="button_addNewClick($event, $scope)" iconclass="wi wi-plus" show="false" margin="1.5em unset unset unset" backgroundcolor="#f27163" bordercolor="#f05c4b"></wm-button> 
+                            <wm-button class="btn-default" caption="Cancel" type="button" margin="1.5em 0.5em unset 0.5em" name="button_cancel" iconclass="wi wi-close" on-click="button_cancelClick($event, $scope)" show="false"></wm-button> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+        <wm-gridrow name="gridrow13"> 
+            <wm-gridcolumn columnwidth="6" name="gridcolumn23"> 
+                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Variables.School_DB_SubjectDetailsData.dataSet" navigation="None" name="livelist_subjectDetails" orderby="subjectId:asc" loadingdatamsg="Loading Subjects..." iconclass="wi wi-book-open" title="Subject Details"> 
+                    <wm-listtemplate layout="inline" name="listtemplate1"> 
+                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container2"> 
+                            <wm-layoutgrid name="layoutgrid5_2"> 
+                                <wm-gridrow name="gridrow8_1"> 
+                                    <wm-gridcolumn columnwidth="8" name="gridcolumn14_1"> 
+                                        <wm-label name="lbl_SubjectName" class="p media-heading text-uppercase" caption="bind:Variables.School_DB_SubjectDetailsData.dataSet.subjectName" fontsize="1.143" fontunit="em" horizontalalign="left"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="4" name="gridcolumn16"> 
+                                        <wm-container class="media-right media-top" name="container5" borderstyle="none"> 
+                                            <wm-button class="btn-transparent" iconclass="fa fa-trash-o" fontsize="18" fontunit="pt" name="button_deleteSubject" on-click="Variables.Notify_deleteSubject.invoke()" disabled="false" borderstyle="none"></wm-button> 
+                                        </wm-container> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-container> 
+                    </wm-listtemplate> 
+                </wm-list> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+    <wm-view class="dialog-view" name="view1"> 
+        <wm-confirmdialog name="notificationconfirmdialog" controller="NotificationDialogController" notificationdialog="confirm" message="{{notification.text}}" title="{{notification.title}}" oktext="{{notification.okButtonText}}" canceltext="{{notification.cancelButtonText}}" on-ok="variableOnOk()" on-close="variableOnClose()" on-cancel="variableOnCancel()"></wm-confirmdialog> 
+    </wm-view> 
+</wm-partial>

@@ -1,0 +1,37 @@
+<wm-partial data-ng-controller="AcademicDetailsPageController" name="partial1"> 
+    <wm-livetable formlayout="dialog" name="livegrid_academics"> 
+        <wm-table gridfirstrowselect="false" editmode="dialog" title="ACADEMIC DETAILS" dataset="bind:Variables.School_DBAcademicsData.dataSet" navigation="Basic" name="grid_academics"> 
+            <wm-table-column binding="academicYearByAcademicYear.academicYear" caption="Academic Year" type="string" primary-key="true" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicYear" readonly="false"></wm-table-column> 
+            <wm-table-column binding="standardDetails.standardName" caption="Standard Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="StandardDetails" readonly="false"></wm-table-column> 
+            <wm-table-column binding="classRoom" caption="Class Room" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+            <wm-table-column binding="classTeacher" caption="Class Teacher" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+            <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+            <wm-table-column binding="customField" caption="Total Students" type="custom" edit-widget-type="text" searchable="false" show="true" readonly="false"></wm-table-column> 
+            <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+            <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+            <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+        </wm-table> 
+        <wm-liveform novalidate="false" title="Academics Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.School_DBAcademicsData.dataSet" captionalign="left" captionposition="top" name="liveform_academics" errormessage=""> 
+            <wm-layoutgrid columns="2" name="layoutgrid12"> 
+                <wm-gridrow name="gridrow29"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn58"> 
+                        <wm-form-field name="academicYearByAcademicYear" displayname="Academic Year" show="true" primary-key="true" generator="assigned" key="academicYearByAcademicYear" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" displayexpression="academicYear"></wm-form-field> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn59"> 
+                        <wm-form-field name="standardDetails" displayname="Standard Details" show="true" primary-key="true" generator="assigned" key="standardDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="standardName"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow30"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn60"> 
+                        <wm-form-field name="classRoom" displayname="Class Room" show="true" primary-key="false" generator="assigned" key="classRoom" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn61"> 
+                        <wm-form-field name="classTeacher" displayname="Class Teacher" show="true" primary-key="false" generator="assigned" key="classTeacher" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+        </wm-liveform> 
+    </wm-livetable> 
+</wm-partial>

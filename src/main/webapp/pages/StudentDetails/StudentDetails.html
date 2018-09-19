@@ -1,0 +1,145 @@
+<wm-page data-ng-controller="StudentDetailsPageController" pagetitle="Student Details" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="page_content1"> 
+            <wm-tabs name="tabs1"> 
+                <wm-tabpane name="tabpane4" title="Results"> 
+                    <wm-layoutgrid name="layoutgrid14"> 
+                        <wm-gridrow name="gridrow50"> 
+                            <wm-gridcolumn columnwidth="7" name="gridcolumn101"> 
+                                <wm-livetable formlayout="dialog" name="livegrid3" accessroles="management"> 
+                                    <wm-table gridfirstrowselect="false" editmode="dialog" title="Results List" dataset="bind:Variables.School_DBResultsData.dataSet" navigation="Classic" name="grid_Results" filtermode="search" exportformat="EXCEL" showrecordcount="true"> 
+                                        <wm-table-column binding="studentDetails.studentName" caption="Student Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="StudentDetails" readonly="false"></wm-table-column> 
+                                        <wm-table-column binding="customField" caption="Subject Name" type="custom" edit-widget-type="text" searchable="false" show="true" readonly="false">
+                                             {{rowData.academicTestSubjects.academicSubjects.subjectDetails.subjectName}} 
+                                        </wm-table-column> 
+                                        <wm-table-column binding="marksSecured" caption="Marks Secured" type="short" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                                        <wm-table-column binding="academicTestSubjects.maxMarks" caption="Max Marks" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicTestSubjects" readonly="false"></wm-table-column> 
+                                        <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+                                        <wm-table-column binding="gradeDetails.grade" caption="Grade Details" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="GradeDetails" readonly="false"></wm-table-column> 
+                                        <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" accessroles="management" shortcutkey="" disabled="false"></wm-table-action> 
+                                        <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" accessroles="management" disabled="false"></wm-table-row-action> 
+                                        <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" accessroles="management" disabled="false"></wm-table-row-action> 
+                                    </wm-table> 
+                                    <wm-liveform novalidate="false" title="Results Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.School_DBResultsData.dataSet" captionalign="left" captionposition="top" name="liveform_Results"> 
+                                        <wm-layoutgrid columns="3" name="layoutgrid7"> 
+                                            <wm-gridrow name="gridrow43"> 
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn166_2"> 
+                                                    <wm-form-field name="marksSecured" displayname="Marks Secured" show="true" primary-key="false" generator="assigned" key="marksSecured" type="short" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn167_2"> 
+                                                    <wm-form-field name="academicTestSubjects" displayname="Academic Test Subjects" show="true" primary-key="true" generator="assigned" key="academicTestSubjects" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="testDetails.testName + '  ' + subjects.subjectName + '  ' + academicSubjects.subjectTeacher" on-change="academicTestSubjectsChange($event, $scope, newVal, oldVal)"></wm-form-field> 
+                                                </wm-gridcolumn> 
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn168_2"> 
+                                                    <wm-form-field name="gradeDetails" displayname="Grade Details" show="true" primary-key="true" generator="assigned" key="gradeDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="grade" disabled="true"></wm-form-field> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                            <wm-gridrow name="gridrow44_1"> 
+                                                <wm-gridcolumn columnwidth="4" name="gridcolumn169_2"> 
+                                                    <wm-form-field name="studentDetails" displayname="Student Details" show="true" primary-key="true" generator="assigned" key="studentDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="studentName"></wm-form-field> 
+                                                </wm-gridcolumn> 
+                                            </wm-gridrow> 
+                                        </wm-layoutgrid> 
+                                        <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                                        <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+                                    </wm-liveform> 
+                                </wm-livetable> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn columnwidth="5" name="gridcolumn102_1" padding="4.5em unset unset unset"> 
+                                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Widgets.grid_Results.selecteditem" navigation="None" name="livelist_Results" nodatamessage="Select Record to view Details" title="Selected Student Test Results" accessroles="management"> 
+                                    <wm-listtemplate layout="inline" name="listtemplate8"> 
+                                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container8_1"> 
+                                            <wm-layoutgrid name="layoutgrid18"> 
+                                                <wm-gridrow name="gridrow39"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn88_1"> 
+                                                        <wm-label padding="unset 0.5em" name="label88_1" caption="Student Id:"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn88"> 
+                                                        <wm-label name="Name" class="p media-heading" caption="bind:Widgets.grid_Results.selecteditem.studentId" fontsize="1.143" fontunit="em" padding="unset 0.5em"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow45"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn99_1"> 
+                                                        <wm-label padding="unset 0.5em" caption="Standard:" name="label61"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn102"> 
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_Results.selecteditem.academicTestSubjects.academicSubjects.academics.standardDetails.standardName" name="label162"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow40"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn811"> 
+                                                        <wm-label padding="unset 0.5em" name="label521" caption="Test Name:"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn812"> 
+                                                        <wm-label name="JobTitle" caption="bind:Widgets.grid_Results.selecteditem.academicTestSubjects.testDetails.testName" class="p" fontunit="em" padding="unset 0.5em"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow46"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn913"> 
+                                                        <wm-label padding="unset 0.5em" name="label613" caption="Subject Name:"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn914"> 
+                                                        <wm-label padding="unset 0.5em" name="label614" caption="bind:Widgets.grid_Results.selecteditem.academicTestSubjects.academicSubjects.subjectDetails.subjectName"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow41"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn183"> 
+                                                        <wm-label padding="unset 0.5em" name="label153_1" caption="Marks Secured"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn184_1"> 
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_Results.selecteditem.marksSecured" name="label517"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow42_1"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn185_2"> 
+                                                        <wm-label padding="unset 0.5em" name="label154" caption="Exam Conducted On:"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn186_1"> 
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_Results.selecteditem.academicTestSubjects.examConductedOn" name="label158"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow43_1"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn187"> 
+                                                        <wm-label padding="unset 0.5em" name="label155" caption="Grade"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn188"> 
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_Results.selecteditem.gradeDetails.grade" name="label159"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                                <wm-gridrow name="gridrow44"> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn189"> 
+                                                        <wm-label padding="unset 0.5em" name="label156" caption="Academic Year:"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                    <wm-gridcolumn columnwidth="6" name="gridcolumn190_1"> 
+                                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_Results.selecteditem.academicYear" name="label160_1"></wm-label> 
+                                                    </wm-gridcolumn> 
+                                                </wm-gridrow> 
+                                            </wm-layoutgrid> 
+                                        </wm-container> 
+                                    </wm-listtemplate> 
+                                </wm-list> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                </wm-tabpane> 
+            </wm-tabs> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+    <wm-view class="dialog-view" name="view1"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Student Academic Results" iconclass="wi wi-format-list-bulleted" name="dialog1"> 
+            <wm-dialogactions name="dialogactions1"> 
+                <wm-button class="btn-primary" caption="OK" name="button3" on-click="Widgets.dialog1.close()"></wm-button> 
+            </wm-dialogactions> 
+            <wm-table title="" dataset="bind:Variables.SV_StudentAcademicResults.dataSet" navigation="None" name="grid6_1"> 
+                <wm-table-column binding="STUDENTID" caption="STUDENT ID" type="string" readonly="true" edit-widget-type="text" show="true"></wm-table-column> 
+                <wm-table-column binding="STUDENTNAME" caption="STUDENT NAME" type="string" readonly="true" edit-widget-type="text" show="true"></wm-table-column> 
+                <wm-table-column binding="TESTID" caption="TEST ID" type="string" readonly="true" edit-widget-type="text" show="true"></wm-table-column> 
+                <wm-table-column binding="TESTNAME" caption="TEST NAME" type="string" readonly="true" edit-widget-type="text" show="true"></wm-table-column> 
+                <wm-table-column binding="MARKS_SECURED" caption="MARKS SECURED" type="string" readonly="true" edit-widget-type="text" show="true"></wm-table-column> 
+                <wm-table-column binding="GRADE" caption="Grade" readonly="true" show="true"></wm-table-column> 
+            </wm-table> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

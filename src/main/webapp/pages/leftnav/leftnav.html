@@ -1,0 +1,22 @@
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="leftnav"> 
+    <wm-nav name="leftnavigation" type="pills" layout="stacked"> 
+        <wm-nav-item name="list_dashboard" accessroles="management"> 
+            <wm-anchor caption="MASTER DETAILS" name="masterDetailsLink" iconclass="wi wi-vpn-key" on-click="Variables.goToPage_MasterDetails.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="nav_item5"> 
+            <wm-anchor name="studentAdmissionsLink" iconclass="fa fa-users" caption="ADMISSIONS" on-click="Variables.goToPage_StudentAdmissions.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_inventory" accessroles="management"> 
+            <wm-anchor caption="MANAGEMENT" name="managementLink" iconclass="fa fa-user-md" on-click="Variables.goToPage_ManagementPage.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="list_order"> 
+            <wm-anchor caption="RESULTS" name="resultsLink" iconclass="fa fa-certificate" on-click="Variables.goToPage_Results.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="nav_item6" show="false"> 
+            <wm-anchor name="logoutLink" iconclass="wi wi-unlock" on-click="Actions.logoutAction.invoke()" caption="LOGOUT"></wm-anchor> 
+        </wm-nav-item> 
+        <wm-nav-item name="nav_item6_1"> 
+            <wm-anchor name="anchor6" iconclass="wi wi-dashboard" caption="Dashboard" on-click="Variables.goToPage_Dashboard.invoke()"></wm-anchor> 
+        </wm-nav-item> 
+    </wm-nav> 
+</wm-partial>

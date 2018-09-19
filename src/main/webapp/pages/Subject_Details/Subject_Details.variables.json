@@ -1,0 +1,241 @@
+{
+  "LV_DeleteSubjects" : {
+    "_id" : "wm-LV_DeleteSubjects-wm.LiveVariable-1475060518921",
+    "name" : "LV_DeleteSubjects",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ {
+      "target" : "subjectId",
+      "value" : "bind:Widgets.livelist_subjectDetails.selecteditem.subjectId",
+      "type" : "number"
+    } ],
+    "operation" : "delete",
+    "dataSet" : [ ],
+    "type" : "SubjectDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onSuccess" : "Variables.School_DB_SubjectDetailsData.listRecords();Variables.Notify_Delete.invoke()",
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "School_DB",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "subjectId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "SUBJECT_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "subjectName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "SUBJECT_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "SubjectDetails",
+      "fullyQualifiedName" : "com.student_usecase.school_db.SubjectDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "subjectId" ]
+    },
+    "tableName" : "SUBJECT_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "inputFields" : { },
+    "package" : "com.student_usecase.school_db.SubjectDetails"
+  },
+  "LV_InsertSubjectDetails" : {
+    "_id" : "wm-SchoolDB_SubjectDetails-wm.LiveVariable-1474979758337",
+    "name" : "LV_InsertSubjectDetails",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ {
+      "target" : "subjectName",
+      "value" : "bind:Widgets.txt_subjectName.datavalue",
+      "type" : "string"
+    } ],
+    "operation" : "insert",
+    "dataSet" : [ ],
+    "type" : "SubjectDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "onSuccess" : "Variables.School_DB_SubjectDetailsData.listRecords()",
+    "onError" : "LV_InsertSubjectDetailsonError($event, $scope)",
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "transformationRequired" : false,
+    "liveSource" : "School_DB",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "subjectId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "SUBJECT_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "subjectName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "SUBJECT_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "SubjectDetails",
+      "fullyQualifiedName" : "com.student_usecase.school_db.SubjectDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "subjectId" ]
+    },
+    "bindCount" : 1,
+    "tableName" : "SUBJECT_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "inputFields" : { },
+    "package" : "com.student_usecase.school_db.SubjectDetails"
+  },
+  "Notify_Delete" : {
+    "_id" : "wm-Notify_Delete-wm.NotificationVariable-1476356642671",
+    "name" : "Notify_Delete",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "list"
+    }, {
+      "target" : "text",
+      "value" : "bind:'Subject Name: \"'+Widgets.livelist_subjectDetails.selecteditem.subjectName+'\" deleted Successfully'",
+      "type" : "string"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "list"
+    } ],
+    "operation" : "toast"
+  },
+  "Notify_deleteSubject" : {
+    "_id" : "wm-Notify_deleteSubject-wm.NotificationVariable-1475133103375",
+    "name" : "Notify_deleteSubject",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Do you want to delete the record?",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Confirm Delete",
+      "type" : "string"
+    }, {
+      "target" : "okButtonText",
+      "value" : "Ok",
+      "type" : "string"
+    }, {
+      "target" : "cancelButtonText",
+      "value" : "Cancel",
+      "type" : "string"
+    } ],
+    "operation" : "confirm",
+    "onOk" : "Variables.LV_DeleteSubjects.deleteRecord()"
+  },
+  "School_DB_SubjectDetailsData" : {
+    "_id" : "wm-School_DB_SubjectDetailsData-wm.LiveVariable-1475132530833",
+    "name" : "School_DB_SubjectDetailsData",
+    "owner" : "Page",
+    "category" : "wm.LiveVariable",
+    "dataBinding" : [ ],
+    "operation" : "read",
+    "dataSet" : [ ],
+    "type" : "SubjectDetails",
+    "isList" : false,
+    "saveInPhonegap" : false,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "inFlightBehavior" : "executeLast",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "transformationRequired" : false,
+    "liveSource" : "School_DB",
+    "ignoreCase" : true,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "subjectId",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "SUBJECT_ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 10,
+        "generator" : "identity",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "subjectName",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "SUBJECT_NAME",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      } ],
+      "entityName" : "SubjectDetails",
+      "fullyQualifiedName" : "com.student_usecase.school_db.SubjectDetails",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "subjectId" ]
+    },
+    "tableName" : "SUBJECT_DETAILS",
+    "tableType" : "TABLE",
+    "properties" : [ ],
+    "relatedTables" : [ ],
+    "filterFields" : { },
+    "package" : "com.student_usecase.school_db.SubjectDetails"
+  }
+}

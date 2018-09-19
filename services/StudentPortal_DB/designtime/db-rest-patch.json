@@ -1,0 +1,15 @@
+{
+  "AcademicTestSubjectsController" : { },
+  "GradeDetailsController" : { },
+  "TestDetailsController" : { },
+  "StandardDetailsController" : { },
+  "StudentDetailsController" : { },
+  "QueryExecutionController" : { },
+  "AcademicSubjectsController" : { },
+  "ResultsController" : { },
+  "UserLoginController" : { },
+  "StudentAcademicsController" : { },
+  "ProcedureExecutionController" : { },
+  "SubjectsController" : { },
+  "AcademicsController" : { }
+}

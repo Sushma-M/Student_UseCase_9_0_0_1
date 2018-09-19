@@ -1,0 +1,369 @@
+{
+  "SV_AcademicSubjectsByStandard" : {
+    "name" : "SV_AcademicSubjectsByStandard",
+    "description" : "AcademicSubjectsByStandard",
+    "version" : "V1",
+    "queryString" : "select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECT_DETAILS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD_ID=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD_ID=stnd.STANDARD_ID",
+    "countQueryString" : "select count(*) from (select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECT_DETAILS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD_ID=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD_ID=stnd.STANDARD_ID) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "year",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2015-2016",
+      "required" : false
+    }, {
+      "name" : "standard",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.student_usecase.school_db.models.query.SvAcademicSubjectsByStandardResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "STANDARD_NAME",
+        "fieldName" : "standardName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SUBJECT_NAME",
+        "fieldName" : "subjectName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "SUBJECT_TEACHER",
+        "fieldName" : "subjectTeacher",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_CountOfStudentPerGrade" : {
+    "name" : "SV_CountOfStudentPerGrade",
+    "description" : "Performance Students Per Grade",
+    "version" : "V1",
+    "queryString" : "select r.GRADE_ID as gradeId ,gd.GRADE as grade,count(r.STUDENT_ID) as studentId from RESULTS r, GRADE_DETAILS gd where r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and r.GRADE_ID=gd.GRADE_ID group by r.GRADE_ID",
+    "countQueryString" : "select count(*) from (select r.GRADE_ID as gradeId ,gd.GRADE as grade,count(r.STUDENT_ID) as studentId from RESULTS r, GRADE_DETAILS gd where r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and r.GRADE_ID=gd.GRADE_ID group by r.GRADE_ID) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "academicYear",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2015-2016",
+      "required" : false
+    }, {
+      "name" : "standardid",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.student_usecase.school_db.models.query.SvCountOfStudentPerGradeResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "grade",
+        "fieldName" : "grade",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "gradeId",
+        "fieldName" : "gradeId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "studentId",
+        "fieldName" : "studentId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_CountOfStudents" : {
+    "name" : "SV_CountOfStudents",
+    "description" : "Count Of Students",
+    "version" : "V1",
+    "queryString" : "select count(STUDENT_ID),STANDARD_ID from STUDENT_ACADEMICS where STANDARD_ID=:standard and ACADEMIC_YEAR=:year group by STANDARD_ID",
+    "countQueryString" : "select count(*) from (select count(STUDENT_ID),STANDARD_ID from STUDENT_ACADEMICS where STANDARD_ID=:standard and ACADEMIC_YEAR=:year group by STANDARD_ID) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "standard",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    }, {
+      "name" : "year",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2016-2017",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.student_usecase.school_db.models.query.SvCountOfStudentsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "STANDARD_ID",
+        "fieldName" : "standardId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "count(STUDENT_ID)",
+        "fieldName" : "count_studentId_",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigInteger",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_GetSTudentResultsForStandard" : {
+    "name" : "SV_GetSTudentResultsForStandard",
+    "description" : "Performance Chart",
+    "version" : "V1",
+    "queryString" : "select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_CONDUCTED_ID,td.TEST_ID as TESTID,td.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_CONDUCTED t, TEST_DETAILS td where r.TEST_CONDUCTED_ID=t.TEST_CONDUCTED_ID and r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=td.TEST_ID and r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and t.TEST_ID=:testid group by r.STUDENT_ID, td.TEST_NAME",
+    "countQueryString" : "select count(*) from (select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_CONDUCTED_ID,td.TEST_ID as TESTID,td.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_CONDUCTED t, TEST_DETAILS td where r.TEST_CONDUCTED_ID=t.TEST_CONDUCTED_ID and r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=td.TEST_ID and r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and t.TEST_ID=:testid group by r.STUDENT_ID, td.TEST_NAME) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "academicYear",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2015-2016",
+      "required" : false
+    }, {
+      "name" : "standardid",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "1",
+      "required" : false
+    }, {
+      "name" : "testid",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "3",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.student_usecase.school_db.models.query.SvGetStudentResultsForStandardResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "MARKS_SECURED",
+        "fieldName" : "marksSecured",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigDecimal",
+          "list" : false
+        }
+      }, {
+        "name" : "STUDENTID",
+        "fieldName" : "studentid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "STUDENTNAME",
+        "fieldName" : "studentname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "TESTID",
+        "fieldName" : "testid",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "TESTNAME",
+        "fieldName" : "testname",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "TEST_CONDUCTED_ID",
+        "fieldName" : "testConductedId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "SV_Top3StudentsFromAllStandards" : {
+    "name" : "SV_Top3StudentsFromAllStandards",
+    "description" : "Top3StudentsFromAllStandards",
+    "version" : "V1",
+    "queryString" : "SELECT\n *\nFROM VIEW_RESULTS V1\nWHERE V1.TEST_ID=:TESTID AND V1.ACADEMIC_YEAR=:ACADEMICYEAR AND V1.TOTAL_MARKS >= (SELECT\n                          SUBSTRING_INDEX(\n                              SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT V2.TOTAL_MARKS ORDER BY V2.TOTAL_MARKS DESC), ',',\n                                              3), ',', -1) MARKS\n                        FROM VIEW_RESULTS V2\n                        WHERE V1.STANDARD_ID = V2.STANDARD_ID AND V1.TEST_ID = V2.TEST_ID\n                        GROUP BY\n                          STANDARD_ID,\n                          TEST_ID)\nORDER BY STANDARD_ID, TEST_ID",
+    "countQueryString" : "select count(*) from (SELECT\n *\nFROM VIEW_RESULTS V1\nWHERE V1.TEST_ID=:TESTID AND V1.ACADEMIC_YEAR=:ACADEMICYEAR AND V1.TOTAL_MARKS >= (SELECT\n                          SUBSTRING_INDEX(\n                              SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT V2.TOTAL_MARKS ORDER BY V2.TOTAL_MARKS DESC), ',',\n                                              3), ',', -1) MARKS\n                        FROM VIEW_RESULTS V2\n                        WHERE V1.STANDARD_ID = V2.STANDARD_ID AND V1.TEST_ID = V2.TEST_ID\n                        GROUP BY\n                          STANDARD_ID,\n                          TEST_ID)\nORDER BY STANDARD_ID, TEST_ID) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "TESTID",
+      "type" : "integer",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "3",
+      "required" : false
+    }, {
+      "name" : "ACADEMICYEAR",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "testValue" : "2015-2016",
+      "required" : false
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "com.student_usecase.school_db.models.query.SvTop3studentsFromAllStandardsResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "ACADEMIC_YEAR",
+        "fieldName" : "academicYear",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "STANDARD_ID",
+        "fieldName" : "standardId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "STUDENT_ID",
+        "fieldName" : "studentId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "STUDENT_NAME",
+        "fieldName" : "studentName",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "TEST_ID",
+        "fieldName" : "testId",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Integer",
+          "list" : false
+        }
+      }, {
+        "name" : "TOTAL_MARKS",
+        "fieldName" : "totalMarks",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.math.BigDecimal",
+          "list" : false
+        }
+      } ]
+    }
+  }
+}

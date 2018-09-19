@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="StudentPortal_DB" CRUDService="true" type="DataService" springFile="StudentPortal_DB.spring.xml">
+    <dataobjects/>
+</service>

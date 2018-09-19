@@ -1,0 +1,40 @@
+<wm-page data-ng-controller="testingPageController" pagetitle="Testing" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-livetable name="livegrid1"> 
+                <wm-table gridfirstrowselect="true" editmode="form" title="Academic_subjects List" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" navigation="Basic" name="grid1"> 
+                    <wm-table-column binding="subjectTeacher" caption="Subject Teacher" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                    <wm-table-column binding="academics.classRoom" caption="Class Room" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Academics"></wm-table-column> 
+                    <wm-table-column binding="academics.classTeacher" caption="Class Teacher" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Academics"></wm-table-column> 
+                    <wm-table-column binding="academics.academicYear" caption="Academic Year" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" primary-key="true" related-entity-name="Academics"></wm-table-column> 
+                    <wm-table-column binding="academics.standardId" caption="Standard Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Academics"></wm-table-column> 
+                    <wm-table-column binding="subjectDetails.subjectId" caption="Subject Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="SubjectDetails" readonly="true"></wm-table-column> 
+                    <wm-table-column binding="subjectDetails.subjectName" caption="Subject Name" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="SubjectDetails"></wm-table-column> 
+                    <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action> 
+                    <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action> 
+                    <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action> 
+                </wm-table> 
+                <wm-liveform novalidate="false" errormessage="" title="Academic_subjects Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DBAcademicSubjectsData.dataSet" captionalign="left" captionposition="top" name="liveform1"> 
+                    <wm-layoutgrid columns="3" name="layoutgrid1"> 
+                        <wm-gridrow name="gridrow1"> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn1"> 
+                                <wm-form-field name="subjectTeacher" displayname="Subject Teacher" show="true" primary-key="false" generator="assigned" key="subjectTeacher" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn2"> 
+                                <wm-form-field name="academics" displayname="Academics" show="true" primary-key="true" generator="assigned" key="academics" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" datafield="academicYear" displayexpression="bind:$[data[$i].academicYear]+' '+$[data[$i].studentAcademicses[$i].rollNumber]+' '+$[data[$i].standardDetails.standardName]"></wm-form-field> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn3"> 
+                                <wm-form-field name="subjectDetails" displayname="Subject Details" show="true" primary-key="true" generator="assigned" key="subjectDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                    <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                    <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+                </wm-liveform> 
+            </wm-livetable> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

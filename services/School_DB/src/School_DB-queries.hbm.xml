@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <sql-query name="SV_AcademicSubjectsByStandard">
+    <![CDATA[
+      select sub.SUBJECT_NAME as SUBJECT_NAME,stnd.STANDARD_NAME as STANDARD_NAME,acs.SUBJECT_TEACHER as SUBJECT_TEACHER from ACADEMIC_SUBJECTS acs,SUBJECT_DETAILS sub,STANDARD_DETAILS stnd where acs.ACADEMIC_YEAR=:year and acs.STANDARD_ID=:standard and acs.SUBJECT_ID=sub.SUBJECT_ID and acs.STANDARD_ID=stnd.STANDARD_ID
+    ]]>
+  </sql-query>
+  <sql-query name="SV_CountOfStudentPerGrade">
+    <![CDATA[
+      select r.GRADE_ID as gradeId ,gd.GRADE as grade,count(r.STUDENT_ID) as studentId from RESULTS r, GRADE_DETAILS gd where r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and r.GRADE_ID=gd.GRADE_ID group by r.GRADE_ID
+    ]]>
+  </sql-query>
+  <sql-query name="SV_CountOfStudents">
+    <![CDATA[
+      select count(STUDENT_ID),STANDARD_ID from STUDENT_ACADEMICS where STANDARD_ID=:standard and ACADEMIC_YEAR=:year group by STANDARD_ID
+    ]]>
+  </sql-query>
+  <sql-query name="SV_GetSTudentResultsForStandard">
+    <![CDATA[
+      select sum(r.MARKS_SECURED) as MARKS_SECURED, r.STUDENT_ID as STUDENTID,s.STUDENT_NAME as STUDENTNAME ,r.TEST_CONDUCTED_ID,td.TEST_ID as TESTID,td.TEST_NAME as TESTNAME from RESULTS r, STUDENT_DETAILS s, TEST_CONDUCTED t, TEST_DETAILS td where r.TEST_CONDUCTED_ID=t.TEST_CONDUCTED_ID and r.STUDENT_ID=s.STUDENT_ID and t.TEST_ID=td.TEST_ID and r.ACADEMIC_YEAR=:academicYear and r.STANDARD_ID=:standardid and t.TEST_ID=:testid group by r.STUDENT_ID, td.TEST_NAME
+    ]]>
+  </sql-query>
+  <sql-query name="SV_Top3StudentsFromAllStandards">
+    <![CDATA[
+      SELECT
+      *
+      FROM VIEW_RESULTS V1
+      WHERE V1.TEST_ID=:TESTID AND V1.ACADEMIC_YEAR=:ACADEMICYEAR AND V1.TOTAL_MARKS >= (SELECT
+      SUBSTRING_INDEX(
+      SUBSTRING_INDEX(GROUP_CONCAT(DISTINCT V2.TOTAL_MARKS ORDER BY V2.TOTAL_MARKS DESC), ',',
+      3), ',', -1) MARKS
+      FROM VIEW_RESULTS V2
+      WHERE V1.STANDARD_ID = V2.STANDARD_ID AND V1.TEST_ID = V2.TEST_ID
+      GROUP BY
+      STANDARD_ID,
+      TEST_ID)
+      ORDER BY STANDARD_ID, TEST_ID
+    ]]>
+  </sql-query>
+</hibernate-mapping>

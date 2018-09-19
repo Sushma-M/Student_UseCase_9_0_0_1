@@ -1,0 +1,29 @@
+<wm-partial data-ng-controller="Standard_DetailsPageController" name="partial1"> 
+    <wm-livetable formlayout="dialog" name="livegrid_standardDetails"> 
+        <wm-table gridfirstrowselect="true" editmode="dialog" title="STANDARD DETAILS" dataset="bind:Variables.School_DB_StandardDetailsData.dataSet" navigation="None" name="grid_standardDetails"> 
+            <wm-table-column binding="standardCode" caption="Standard Code" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+            <wm-table-column binding="standardName" caption="Standard Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+            <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column> 
+            <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+            <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+            <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+        </wm-table> 
+        <wm-liveform novalidate="false" title="Standard_details Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.School_DB_StandardDetailsData.dataSet" captionalign="left" captionposition="left" name="liveform_standardDetails" errormessage=""> 
+            <wm-layoutgrid columns="1" name="layoutgrid8"> 
+                <wm-gridrow name="gridrow13_1"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn20"> 
+                        <wm-form-field name="standardCode" displayname="Standard Code" show="true" primary-key="false" generator="assigned" key="standardCode" type="string" required="required" widget="text" maxchars="4" inputtype="text" placeholder="Standard Code" updateon="default" regexp="^[A-Z]+$" validationmessage="Enter Upper Case"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow14"> 
+                    <wm-gridcolumn columnwidth="12" name="gridcolumn21"> 
+                        <wm-form-field name="standardName" displayname="Standard Name" show="true" primary-key="false" generator="assigned" key="standardName" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="Standard Name" regexp="^[a-zA-Z0-9 ]+$" updateon="default" validationmessage="Enter valid standard Name"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+            <wm-form-field name="standardId" displayname="Standard Id" show="false" primary-key="true" generator="identity" key="standardId" type="integer" readonly="readonly" required="required" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+        </wm-liveform> 
+    </wm-livetable> 
+</wm-partial>

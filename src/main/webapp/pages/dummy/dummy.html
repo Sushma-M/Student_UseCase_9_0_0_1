@@ -1,0 +1,34 @@
+<wm-page data-ng-controller="dummyPageController" pagetitle="Dummy" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-table editmode="quickedit" title="Student_identification List" dataset="bind:Variables.School_DBStudentIdentificationData.dataSet" navigation="Basic" name="grid3"> 
+                <wm-table-column binding="identificationId" caption="Identification Id" generator="identity" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" readonly="true"></wm-table-column> 
+                <wm-table-column binding="identificationType" caption="Identification Type" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-column binding="identificationNumber" caption="Identification Number" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column> 
+                <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action> 
+                <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action> 
+            </wm-table> 
+            <wm-table editmode="quickedit" title="Student_details List" dataset="bind:Variables.School_DBStudentDetailsData.dataSet" navigation="Basic" name="grid4"> 
+                <wm-table-column binding="studentId" caption="Student Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="studentName" caption="Student Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="dateOfBirth" caption="Date Of Birth" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="fatherName" caption="Father Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="address" caption="Address" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="joiningDate" caption="Joining Date" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="profilePic" caption="Profile Pic" type="blob" generator="assigned" edit-widget-type="upload" searchable="false" show="true" readonly="false"> 
+                    <a ng-if="columnValue != null" class="col-md-9" target="_blank" data-ng-href="{{contentBaseUrl + row[primaryKey] + '/content/'+ colDef.field}}"><i class="wm-icon wm-icon24 wi wi-file"></i></a> 
+                </wm-table-column> 
+                <wm-table-column binding="status" caption="Status" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="contactNumber" caption="Contact Number" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="gender" caption="Gender" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column> 
+                <wm-table-column binding="studentIdentification.identificationId" caption="Identification Id" type="integer" generator="identity" is-related-pk="true" show="true" related-entity-name="StudentIdentification" readonly="undefined"></wm-table-column> 
+                <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+            </wm-table> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

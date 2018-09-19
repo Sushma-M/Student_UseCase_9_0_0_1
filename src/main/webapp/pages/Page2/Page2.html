@@ -1,0 +1,77 @@
+<wm-page data-ng-controller="Page2PageController" pagetitle="Page 2" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-livetable name="livegrid1"> 
+                <wm-table gridfirstrowselect="true" editmode="form" title="Test_conducted List" dataset="bind:Variables.School_DBTestConductedData.dataSet" navigation="Basic" name="grid2"> 
+                    <wm-table-column binding="testConductedId" caption="Test Conducted Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="testConductedOn" caption="Test Conducted On" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicTestSubjects.maxMarks" caption="Max Marks" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicTestSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicTestSubjects.academicYear" caption="Academic Year" type="string" primary-key="true" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicTestSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicTestSubjects.testId" caption="Test Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" related-entity-name="AcademicTestSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+                    <wm-table-column binding="customField" caption="Standard Id" type="string" edit-widget-type="text" searchable="false" show="true" readonly="false">
+                         {{rowData.standardId}} 
+                    </wm-table-column> 
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+                </wm-table> 
+                <wm-liveform novalidate="false" errormessage="" title="Test_conducted Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DBTestConductedData.dataSet" captionalign="left" captionposition="top" name="liveform1"> 
+                    <wm-layoutgrid name="layoutgrid2"> 
+                        <wm-gridrow name="gridrow1"> 
+                            <wm-gridcolumn name="gridcolumn1" columnwidth="12"> 
+                                <wm-form-field name="academicTestSubjects" displayname="Academic Test Subjects" show="true" primary-key="true" generator="assigned" key="academicTestSubjects" type="list" is-related="true" required="required" widget="select" maxchars="255" dataset="bind:Variables.liveVariable1.dataSet" datafield="All Fields" displayexpression="bind:$[data[$i].academicYear]+' '+$[data[$i].testDetails.testName]+' '+$[data[$i].academicSubjects.subjectDetails.subjectName]+' '+$[data[$i].academicSubjects.academics.standardDetails.standardName]" placeholder="Select value"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow name="gridrow2"> 
+                            <wm-gridcolumn name="gridcolumn2" columnwidth="12"> 
+                                <wm-form-field name="testConductedId" displayname="Test Conducted Id" show="true" primary-key="true" generator="assigned" key="testConductedId" type="integer" required="required" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                        <wm-gridrow name="gridrow3"> 
+                            <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                                <wm-form-field name="testConductedOn" displayname="Test Conducted On" show="true" primary-key="false" generator="assigned" key="testConductedOn" type="date" widget="date" placeholder="Select date" outputformat="yyyy-MM-dd"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                    <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                    <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="" shortcutkey="" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+                </wm-liveform> 
+            </wm-livetable> 
+            <wm-livetable name="livegrid2"> 
+                <wm-table gridfirstrowselect="true" editmode="form" title="Academic_test_subjects List" dataset="bind:Variables.School_DBAcademicTestSubjectsData.dataSet" navigation="Basic" name="grid2_1" filtermode="search"> 
+                    <wm-table-column binding="maxMarks" caption="Max Marks" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicSubjects.subjectTeacher" caption="Subject Teacher" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicSubjects.academicYear" caption="Academic Year" type="string" primary-key="true" generator="assigned" edit-widget-type="text" show="true" related-entity-name="AcademicSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="academicSubjects.subjectId" caption="Subject Id" type="integer" primary-key="true" generator="assigned" edit-widget-type="number" show="true" related-entity-name="AcademicSubjects" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="testDetails.testId" caption="Test Id" type="integer" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true" related-entity-name="TestDetails"></wm-table-column> 
+                    <wm-table-column binding="testDetails.testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="TestDetails" readonly="false"></wm-table-column> 
+                    <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" sortable="false" searchable="false" show="true"></wm-table-column> 
+                    <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                    <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+                    <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+                </wm-table> 
+                <wm-liveform novalidate="false" errormessage="" title="Academic_test_subjects Info" formlayout="inline" iconclass="wi wi-edit" dataset="bind:Variables.School_DBAcademicTestSubjectsData.dataSet" captionalign="left" captionposition="top" name="liveform2"> 
+                    <wm-layoutgrid columns="3" name="layoutgrid2_1"> 
+                        <wm-gridrow name="gridrow4"> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn4"> 
+                                <wm-form-field name="maxMarks" displayname="Max Marks" show="true" primary-key="false" generator="assigned" key="maxMarks" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value"></wm-form-field> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn5"> 
+                                <wm-form-field name="academicSubjects" displayname="Academic Subjects" show="true" primary-key="true" generator="assigned" key="academicSubjects" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" dataset="bind:Variables.AcademicSubjects.dataSet" datafield="All Fields" displayexpression="bind:$[data[$i].academicYear]+' '+$[data[$i].subjectDetails.subjectName]+' '+$[data[$i].standardId]"></wm-form-field> 
+                            </wm-gridcolumn> 
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn6"> 
+                                <wm-form-field name="testDetails" displayname="Test Details" show="true" primary-key="true" generator="assigned" key="testDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="testName"></wm-form-field> 
+                            </wm-gridcolumn> 
+                        </wm-gridrow> 
+                    </wm-layoutgrid> 
+                    <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                    <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+                </wm-liveform> 
+            </wm-livetable> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+</wm-page>

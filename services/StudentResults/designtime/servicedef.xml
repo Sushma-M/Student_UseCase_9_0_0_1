@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="StudentResults" class="com.student_usecase.studentresults.StudentResults" type="JavaService" springFile="StudentResults.spring.xml">
+    <operation name="insertResults">
+        <parameter name="academicYear" typeRef="java.lang.String" isList="false"/>
+        <parameter name="standardId" typeRef="int" isList="false"/>
+        <parameter name="subjectId" typeRef="int" isList="false"/>
+        <parameter name="testId" typeRef="int" isList="false"/>
+        <parameter name="testConductedId" typeRef="int" isList="false"/>
+        <return typeRef="com.student_usecase.school_db.Results" isList="false"/>
+    </operation>
+    <dataobjects/>
+</service>

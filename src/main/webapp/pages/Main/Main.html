@@ -1,0 +1,17 @@
+<wm-page data-ng-controller="MasterDetailsPageController" name="masterdetailspage" pagetitle="Master Details"> 
+    <wm-header content="header" name="header" height="auto"></wm-header> 
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav> 
+    <wm-content name="content"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="mainContent" padding="unset 15px"> 
+            <wm-tabs name="tabs1"> 
+                <wm-tabpane name="tabpane_academicDetails" title="ACADEMIC DETAILS" content="Academic_Details" isdefaulttab="true"></wm-tabpane> 
+                <wm-tabpane name="tabpane1" title="STANDARD DETAILS" content="Standard_Details"></wm-tabpane> 
+                <wm-tabpane name="tabpane2" title="SUBJECT DETAILS" content="Subject_Details"></wm-tabpane> 
+                <wm-tabpane name="tabpane3" title="TEST DETAILS" content="Test_Details"></wm-tabpane> 
+                <wm-tabpane name="tabpane4" title="GRADE DETAILS" content="Grade_Details"></wm-tabpane> 
+            </wm-tabs> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer name="footer" content="footer"></wm-footer> 
+</wm-page>

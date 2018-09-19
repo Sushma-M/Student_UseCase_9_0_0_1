@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<beans xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd" xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <context:component-scan base-package="com.student_usecase.studentportal_db.controller,com.student_usecase.studentportal_db.service,com.student_usecase.studentportal_db.dao" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:StudentPortal_DB.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+    <bean class="com.zaxxer.hikari.HikariConfig" id="StudentPortal_DBHikariConfig">
+        <property name="jdbcUrl" value="${StudentPortal_DB.url}"/>
+        <property name="driverClassName" value="${StudentPortal_DB.driverClass}"/>
+        <property name="username" value="${StudentPortal_DB.username}"/>
+        <property name="password" value="${StudentPortal_DB.password}"/>
+        <property name="maximumPoolSize" value="${StudentPortal_DB.maxPoolSize}"/>
+        <property name="minimumIdle" value="${StudentPortal_DB.minPoolSize}"/>
+        <property name="connectionTimeout" value="30000"/>
+        <property name="validationTimeout" value="5000"/>
+        <property name="idleTimeout" value="600000"/>
+        <property name="maxLifetime" value="1800000"/>
+        <property name="initializationFailTimeout" value="-1"/>
+        <property name="leakDetectionThreshold" value="120000"/>
+        <property name="registerMbeans" value="false"/>
+    </bean>
+    <bean class="com.zaxxer.hikari.HikariDataSource" lazy-init="true" destroy-method="close" id="StudentPortal_DBWMManagedDataSource">
+        <constructor-arg ref="StudentPortal_DBHikariConfig"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.interceptors.WMEntityInterceptor" id="StudentPortal_DBEntityInterceptor"/>
+    <bean class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean" id="StudentPortal_DBSessionFactory">
+        <property name="dataSource" ref="StudentPortal_DBDataSource"/>
+        <property name="packagesToScan" value="com.student_usecase.studentportal_db"/>
+        <property name="entityInterceptor" ref="StudentPortal_DBEntityInterceptor"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                StudentPortal_DB-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+        <property name="customTypes">
+            <array value-type="com.wavemaker.runtime.data.CustomType" xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc">
+                <ref bean="dateTimeCustomType"/>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                ${StudentPortal_DB.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                ${StudentPortal_DB.hbm2ddl}
+                </prop>
+                <prop key="hibernate.temp.use_jdbc_metadata_defaults">
+                    false
+                </prop>
+                <prop key="hibernate.schema_update.unique_constraint_strategy">
+                    skip
+                </prop>
+                <prop key="hibernate.id.new_generator_mappings">true</prop>
+            </props>
+        </property>
+    </bean>
+    <bean class="org.springframework.orm.hibernate5.HibernateTransactionManager" id="StudentPortal_DBTransactionManager">
+        <property name="sessionFactory" ref="StudentPortal_DBSessionFactory"/>
+        <property name="defaultTimeout" value="${StudentPortal_DB.transactionTimeout}"/>
+    </bean>
+    <bean class="org.springframework.orm.hibernate5.HibernateTemplate" id="StudentPortal_DBTemplate">
+        <property name="sessionFactory" ref="StudentPortal_DBSessionFactory"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl" id="StudentPortal_DBWMQueryExecutor">
+        <property name="template" ref="StudentPortal_DBTemplate"/>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl" id="StudentPortal_DBWMProcedureExecutor">
+        <property name="template" ref="StudentPortal_DBTemplate"/>
+        <property name="serviceId" value="StudentPortal_DB"/>
+    </bean>
+    <bean class="com.wavemaker.commons.data.type.WMPersistentLocalDateTime" id="persistentLocalDateTimeType"/>
+    <bean class="com.wavemaker.runtime.data.CustomType" id="dateTimeCustomType">
+        <property name="type" ref="persistentLocalDateTimeType"/>
+        <property name="keys">
+            <list>
+                <value>DateTime</value>
+                <value>org.joda.time.LocalDateTime</value>
+            </list>
+        </property>
+    </bean>
+    <bean class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" id="StudentPortal_DBPageableHandlerMethodResolver">
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${StudentPortal_DB.maxPageSize}"/>
+        <property name="fallbackPageable">
+            <bean class="org.springframework.data.domain.PageRequest">
+                <constructor-arg value="0"/>
+                <constructor-arg value="20"/>
+            </bean>
+        </property>
+    </bean>
+    <bean class="com.wavemaker.runtime.data.datasource.WMDataSource" id="StudentPortal_DBDataSource">
+        <property name="dataSourceType" value="${StudentPortal_DB.dataSourceType}"/>
+        <property name="jndiName" value="${StudentPortal_DB.jndiName}"/>
+        <property name="serviceId" value="StudentPortal_DB"/>
+    </bean>
+    <tx:annotation-driven xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context" xmlns:mvc="http://www.springframework.org/schema/mvc"/>
+</beans>

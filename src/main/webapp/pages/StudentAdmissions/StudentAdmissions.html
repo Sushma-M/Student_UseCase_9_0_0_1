@@ -1,0 +1,93 @@
+<wm-page data-ng-controller="StudentAdmissionsPageController" pagetitle="Student Admissions" name="page1"> 
+    <wm-header content="header" name="header1"></wm-header> 
+    <wm-content name="content1"> 
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel> 
+        <wm-page-content columnwidth="10" name="page_content1"> 
+            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-3 lg-3" class="media-list" dataset="bind:Variables.StVar_StudentData.dataSet" navigation="Scroll" name="livelist_studentDetails"> 
+                <wm-listtemplate layout="inline" name="listtemplate2"> 
+                    <wm-container name="container1" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId !==''"> 
+                        <wm-container class="media-left" name="container6"></wm-container> 
+                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container7"> 
+                            <wm-label name="studentName" class="p media-heading" caption="bind:Variables.StVar_StudentData.dataSet[$i].studentName" fontsize="1.243" fontunit="em" color="#368CD0" padding="unset unset unset 0.5em" on-click="studentNameClick($event, $scope, item, currentItemWidgets)"></wm-label> 
+                            <wm-label name="fatherName" caption="bind:Variables.StVar_StudentData.dataSet[$i].fatherName" class="p" padding="unset unset unset 0.5em" on-click="fatherNameClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                            <wm-label padding="unset 0.5em" name="dateOfBirth" class="p" caption="bind:Variables.StVar_StudentData.dataSet[$i].dateOfBirth | toDate: 'yyyy, MMM dd'" on-click="dateOfBirthClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                            <wm-label padding="unset 0.5em" name="address" class="p" caption="bind:Variables.StVar_StudentData.dataSet[$i].address" on-click="addressClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                            <wm-label padding="unset 0.5em" name="contactNumber" class="p" caption="bind:Variables.StVar_StudentData.dataSet[$i].contactNumber" on-click="contactNumberClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                            <wm-label padding="unset 0.5em" name="joiningDate" class="p" caption="bind:Variables.StVar_StudentData.dataSet[$i].joiningDate | toDate: 'yyyy, dd MMMM'" on-click="joiningDateClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                            <wm-label padding="unset 0.5em" name="status" class="p" caption="bind:Variables.StVar_StudentData.dataSet[$i].status" on-click="statusClick($event, $scope, item, currentItemWidgets)" color="#000000"></wm-label> 
+                        </wm-container> 
+                        <wm-container class="media-right media-top" name="container8"> 
+                            <wm-picture width="60pt" height="60pt" name="Picture" shape="circle" picturesource="bind:Variables.StVar_StudentData.dataSet[$i].profilePic" class="media-object"></wm-picture> 
+                            <wm-button class="btn-default" caption="" type="button" margin="3em 0.5em unset 2em" name="button_editRecord" iconclass="fa fa-edit fa-lg" on-click="Widgets.dialog1.open()"></wm-button> 
+                        </wm-container> 
+                    </wm-container> 
+                    <wm-container name="container5" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId ==''" width="260px" height="191.7px"> 
+                        <wm-tile name="statTile" width="220px" height="160px" class="bg-primary" backgroundcolor="#294d81" margin="1.25em unset unset 2em" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId ==''"> 
+                            <wm-layoutgrid height="100%" name="layoutgrid1" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId ==''"> 
+                                <wm-gridrow height="100%" name="gridrow1"> 
+                                    <wm-gridcolumn columnwidth="12" padding="2em unset unset unset" horizontalalign="center" name="gridcolumn2"> 
+                                        <wm-button iconclass="wi wi-plus-circle fa-3x" name="button3_1" backgroundcolor="#294d81" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId ==''" on-click="Widgets.dialog1.open()"></wm-button> 
+                                        <wm-label name="tileTitle" caption="Add Student" class="p" fontsize="1.5" fontunit="em" show="bind:Variables.StVar_StudentData.dataSet[$i].studentId ==''"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-tile> 
+                    </wm-container> 
+                </wm-listtemplate> 
+            </wm-list> 
+        </wm-page-content> 
+    </wm-content> 
+    <wm-footer content="footer" name="footer1"></wm-footer> 
+    <wm-view class="dialog-view" name="view1"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="New Student Registration" iconclass="wi wi-edit" name="dialog1" width="620px"> 
+            <wm-dialogactions name="dialogactions1" show="false"></wm-dialogactions> 
+            <wm-liveform novalidate="false" errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.School_DBStudentDetailsData.dataSet" captionalign="left" captionposition="top" name="liveform_StudentDetails" formdata="bind:Widgets.livelist_studentDetails.selecteditem" on-success="liveform_StudentDetailsSuccess($event, $operation, $data)"> 
+                <wm-layoutgrid columns="2" name="layoutgrid2"> 
+                    <wm-gridrow name="gridrow2"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn2_1"> 
+                            <wm-form-field name="studentName" displayname="Student Name" show="true" primary-key="false" generator="assigned" key="studentName" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="STUDENT NAME"></wm-form-field> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn3"> 
+                            <wm-form-field name="fatherName" displayname="Father Name" show="true" primary-key="false" generator="assigned" key="fatherName" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="FATHER NAME"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow3"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn4"> 
+                            <wm-form-field name="dateOfBirth" displayname="Date Of Birth" show="true" primary-key="false" generator="assigned" key="dateOfBirth" type="date" required="required" widget="date" placeholder="DATE OF BIRTH" outputformat="yyyy-MM-dd" mindate="2006-01-01" maxdate="2050-01-01"></wm-form-field> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn5"> 
+                            <wm-form-field name="address" displayname="Address" show="true" primary-key="false" generator="assigned" key="address" type="string" required="required" widget="textarea" maxchars="255" placeholder="ADDRESS"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow4"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn6"> 
+                            <wm-form-field name="contactNumber" displayname="Contact Number" show="true" primary-key="false" generator="assigned" key="contactNumber" type="string" required="required" widget="text" maxchars="10" placeholder="CONTACT NUMBER" regexp="[0-9]{10}$" updateon="default" validationmessage="Enter Valid Phone Number" inputtype="text"></wm-form-field> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn7"> 
+                            <wm-form-field name="profilePic" displayname="Profile Pic" show="true" primary-key="false" generator="assigned" key="profilePic" type="blob" widget="upload" maxchars="255"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow5"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn8"> 
+                            <wm-form-field name="gender" displayname="Gender" show="bind:Widgets.liveform_StudentDetails.formWidgets.studentId.datavalue==&quot;&quot;" primary-key="false" generator="assigned" key="gender" type="string" widget="radioset" maxchars="6" placeholder="" dataset="Female, Male" defaultvalue="bind:Widgets.livelist_studentDetails.selecteditem.gender"></wm-form-field> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn9"> 
+                            <wm-form-field name="joiningDate" displayname="Joining Date" show="bind:Widgets.liveform_StudentDetails.formWidgets.studentId.datavalue==&quot;&quot;" primary-key="false" generator="assigned" key="joiningDate" type="date" required="required" widget="date" placeholder="JOINING DATE" outputformat="yyyy-MM-dd" defaultvalue="bind:(Widgets.liveform_StudentDetails.formWidgets.studentId.datavalue==&quot;&quot;)?(currentDay):(Widgets.livelist_studentDetails.selecteditem.joiningDate)" excludedays="0"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow6"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn10"> 
+                            <wm-form-field name="studentId" displayname="Student Id" show="false" primary-key="true" generator="identity" key="studentId" type="integer" readonly="readonly" required="required" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn11"> 
+                            <wm-form-field name="status" displayname="Status" show="false" primary-key="false" generator="assigned" key="status" type="string" required="required" widget="text" maxchars="255" inputtype="text" placeholder="STATUS" defaultvalue="bind:(Widgets.liveform_StudentDetails.formWidgets.studentId.datavalue==&quot;&quot;)?'Joined':'Joined'" autocomplete="false" disabled="false"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+                <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="Widgets.dialog1.close()" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+            </wm-liveform> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-page>

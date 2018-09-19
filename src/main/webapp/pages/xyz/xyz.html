@@ -1,0 +1,24 @@
+<wm-page data-ng-controller="xyzPageController" pagetitle="Xyz" name="page1"> 
+    <wm-content name="content1"> 
+        <wm-page-content columnwidth="12" name="page_content1"> 
+            <wm-table editmode="quickedit" title="Student_details List" dataset="bind:Variables.School_DBStudentDetailsData.dataSet" navigation="Basic" name="grid1"> 
+                <wm-table-column binding="studentId" caption="Student Id" type="integer" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" show="true" on-blur="studentIdOnBlur($event, $scope, rowData)"></wm-table-column> 
+                <wm-table-column binding="studentName" caption="Student Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false" on-blur="studentNameOnBlur($event, $scope, rowData)"></wm-table-column> 
+                <wm-table-column binding="dateOfBirth" caption="Date Of Birth" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="fatherName" caption="Father Name" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="address" caption="Address" type="string" widget-type="checkbox" generator="assigned" edit-widget-type="text" show="true" readonly="false" on-blur="addressOnBlur($event, $scope, rowData)"> 
+                    <input type="checkbox" ng-model="row['address']" ng-disabled="{{colDef.readonly || !isGridEditMode}}" class="" data-ng-class=""> 
+                </wm-table-column> 
+                <wm-table-column binding="joiningDate" caption="Joining Date" type="date" generator="assigned" edit-widget-type="date" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="profilePic" caption="Profile Pic" type="blob" generator="assigned" edit-widget-type="upload" searchable="false" show="true" readonly="false"> 
+                    <a ng-if="columnValue != null" class="col-md-9" target="_blank" data-ng-href="{{contentBaseUrl + row[primaryKey] + '/content/'+ colDef.field}}"><i class="wm-icon wm-icon24 wi wi-file"></i></a> 
+                </wm-table-column> 
+                <wm-table-column binding="status" caption="Status" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="contactNumber" caption="Contact Number" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+                <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+                <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+            </wm-table> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

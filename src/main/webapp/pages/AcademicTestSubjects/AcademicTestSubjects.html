@@ -1,0 +1,38 @@
+<wm-partial data-ng-controller="AcademicTestSubjectsPageController" name="partial1"> 
+    <wm-table editmode="inline" title="" dataset="bind:Variables.School_DBAcademicTestSubjectsData.dataSet" navigation="None" name="grid1"> 
+        <wm-table-column binding="testDetails.testName" caption="Test Name" type="string" generator="assigned" edit-widget-type="text" show="true" related-entity-name="TestDetails" readonly="false"></wm-table-column> 
+        <wm-table-column binding="customField" caption="Subject Name" type="custom" readonly="true" edit-widget-type="text" searchable="false" show="true">
+             {{rowData.academicSubjects.subjectDetails.subjectName}} 
+        </wm-table-column> 
+        <wm-table-column binding="maxMarks" caption="Max Marks" type="string" generator="assigned" edit-widget-type="text" show="true" readonly="false"></wm-table-column> 
+        <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+        <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+        <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+    </wm-table> 
+    <wm-view class="dialog-view" name="view1"> 
+        <wm-dialog dialogtype="design-dialog" modal="true" title="Edit Academic Test Subjects" iconclass="wi wi-edit" name="dialog1"> 
+            <wm-dialogactions name="dialogactions1"></wm-dialogactions> 
+            <wm-liveform novalidate="false" errormessage="" title="" iconclass="" defaultmode="Edit" dataset="bind:Variables.School_DB_UpdateAcademicTestSubjects.dataSet" captionalign="left" captionposition="left" name="liveform_InsertAcademicTestSub" formdata="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem"> 
+                <wm-layoutgrid name="layoutgrid2"> 
+                    <wm-gridrow name="gridrow1"> 
+                        <wm-gridcolumn name="gridcolumn1" columnwidth="12"> 
+                            <wm-form-field name="academicSubjects" displayname="Academic Subjects" show="true" primary-key="true" generator="assigned" key="academicSubjects" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" dataset="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem.academicSubjects" defaultvalue="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem.academicSubjects"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow2"> 
+                        <wm-gridcolumn name="gridcolumn2" columnwidth="12"> 
+                            <wm-form-field name="testDetails" displayname="Test Details" show="true" primary-key="true" generator="assigned" key="testDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" dataset="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem.testDetails" defaultvalue="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem.testDetails"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                    <wm-gridrow name="gridrow3"> 
+                        <wm-gridcolumn name="gridcolumn3" columnwidth="12"> 
+                            <wm-form-field name="maxMarks" displayname="Max Marks" show="true" primary-key="false" generator="assigned" key="maxMarks" type="string" widget="text" maxchars="255" inputtype="text" placeholder="Enter value" defaultvalue="bind:Widgets.livelist_academicTestSubjectsDat.selecteditem.maxMarks"></wm-form-field> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+                <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="Widgets.dialog1.close()" shortcutkey="" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" action="" shortcutkey="" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+            </wm-liveform> 
+        </wm-dialog> 
+    </wm-view> 
+</wm-partial>

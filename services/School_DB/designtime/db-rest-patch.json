@@ -1,0 +1,20 @@
+{
+  "TestConductedController" : { },
+  "AcademicTestSubjectsController" : { },
+  "AcademicYearController" : { },
+  "GradeDetailsController" : { },
+  "TestDetailsController" : { },
+  "StandardDetailsController" : { },
+  "StudentDetailsController" : { },
+  "QueryExecutionController" : { },
+  "AcademicSubjectsController" : { },
+  "EmployeeDetailsController" : { },
+  "SubjectDetailsController" : { },
+  "ResultsController" : { },
+  "ViewResultsController" : { },
+  "UserLoginController" : { },
+  "StudentAcademicsController" : { },
+  "StudentIdentificationController" : { },
+  "ProcedureExecutionController" : { },
+  "AcademicsController" : { }
+}

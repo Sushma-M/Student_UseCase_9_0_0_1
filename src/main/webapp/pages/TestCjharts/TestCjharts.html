@@ -1,0 +1,8 @@
+<wm-page data-ng-controller="TestCjhartsPageController" pagetitle="Test Cjharts"> 
+    <wm-content> 
+        <wm-page-content columnwidth="12"> 
+            <wm-chart title="Pie Chart" type="Pie" name="chart3" theme="GrayScale" dataset="bind:Variables.LV_TestDetails.dataSet" iconclass="wi wi-pie-chart" labeltype="value" showlabels="false" yaxisdatakey="testId" xaxisdatakey="testName" aggregationcolumn="testId" aggregation="count" groupby="testName"></wm-chart> 
+            <wm-chart title="Column Chart" type="Column" name="chart2" theme="Flyer" dataset="bind:Variables.SV_TestResults.dataSet" iconclass="wi wi-bar-chart" yaxisdatakey="MARKS_SECURED" xaxisdatakey="STUDENTNAME" reducexticks="true" staggerlabels="false" subheading="bind:'Results of the individual student for: '+Widgets.chart3.selecteditem.testName" nodatamessage="Select any test from the above Chart to view Results"></wm-chart> 
+        </wm-page-content> 
+    </wm-content> 
+</wm-page>

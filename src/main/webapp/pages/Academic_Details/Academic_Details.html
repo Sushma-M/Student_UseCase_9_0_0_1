@@ -1,0 +1,31 @@
+<wm-partial data-ng-controller="Academic_DetailsPageController" name="partial1"> 
+    <wm-livetable name="livegrid_academicYear"> 
+        <wm-table gridfirstrowselect="true" editmode="form" title="ACADEMIC YEAR DETAILS" dataset="bind:Variables.School_DB_AcademicYearData.dataSet" navigation="Basic" name="grid_academicYear" iconclass="wi wi-calendar"> 
+            <wm-table-column binding="academicYear" caption="Academic Year" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" primary-key="true"></wm-table-column> 
+            <wm-table-column binding="startYear" caption="Start Year" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+            <wm-table-column binding="endYear" caption="End Year" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer"></wm-table-column> 
+            <wm-table-action key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action> 
+            <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action> 
+            <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action> 
+        </wm-table> 
+        <wm-liveform novalidate="false" title="ACADEMIC YEAR" formlayout="inline" iconclass="wi wi-mode-edit fa-lg fa-spin fa-pull-left" dataset="bind:Variables.School_DB_AcademicYearData.dataSet" captionalign="left" captionposition="top" name="liveform_academicYear" errormessage=""> 
+            <wm-layoutgrid columns="2" name="layoutgrid2"> 
+                <wm-gridrow name="gridrow3"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn4"> 
+                        <wm-form-field name="startYear" displayname="Start Year" show="true" primary-key="false" generator="assigned" key="startYear" type="integer" maxvalue="2099" required="required" step="0" widget="number" inputtype="number" placeholder="Enter Start Year" on-change="startYearChange($event, $scope, newVal, oldVal)" minvalue="1900" maxchars="4" validationmessage="Enter Valid Year" hint="Academic Start Year"></wm-form-field> 
+                    </wm-gridcolumn> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn5"> 
+                        <wm-form-field name="endYear" displayname="End Year" show="true" primary-key="false" generator="assigned" key="endYear" type="integer" readonly="readonly" required="required" step="0" widget="number" inputtype="number" placeholder="Enter End Year" disabled="false" maxchars="4"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+                <wm-gridrow name="gridrow4"> 
+                    <wm-gridcolumn columnwidth="6" name="gridcolumn6"> 
+                        <wm-form-field name="academicYear" displayname="Academic Year" show="true" primary-key="true" generator="assigned" key="academicYear" type="string" required="required" widget="text" maxchars="9" inputtype="text" placeholder="Enter value" disabled="true"></wm-form-field> 
+                    </wm-gridcolumn> 
+                </wm-gridrow> 
+            </wm-layoutgrid> 
+            <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+            <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+        </wm-liveform> 
+    </wm-livetable> 
+</wm-partial>

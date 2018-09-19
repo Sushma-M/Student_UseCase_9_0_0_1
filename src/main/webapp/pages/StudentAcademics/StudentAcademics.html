@@ -1,0 +1,136 @@
+<wm-partial data-ng-controller="StudentAcademicsPageController" name="partial1"> 
+    <wm-layoutgrid name="layoutgrid10"> 
+        <wm-gridrow name="gridrow37"> 
+            <wm-gridcolumn columnwidth="7" name="gridcolumn108_1"> 
+                <wm-layoutgrid name="layoutgrid4_1"> 
+                    <wm-gridrow name="gridrow14"> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn25"> 
+                            <wm-composite name="composite1"> 
+                                <wm-label class="col-md-3 control-label" name="label17" caption="Academic Year"></wm-label> 
+                                <wm-container class="col-md-9" name="container3"> 
+                                    <wm-select name="select_academicYear" dataset="bind:Variables.LV_SelectAcademicYear.dataSet" datafield="academicYear" displayfield="academicYear"></wm-select> 
+                                </wm-container> 
+                            </wm-composite> 
+                        </wm-gridcolumn> 
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn23" padding="unset unset unset 0.5em"> 
+                            <wm-composite name="composite2"> 
+                                <wm-label class="col-md-3 control-label" name="label18" caption="Standard"></wm-label> 
+                                <wm-container class="col-md-9" name="container4"> 
+                                    <wm-select name="select_standard" dataset="bind:Variables.LV_SelectAcademicStandard.dataSet" datafield="standardId" displayfield="standardDetails.standardName" orderby="standardDetails.standardId:asc"></wm-select> 
+                                </wm-container> 
+                            </wm-composite> 
+                        </wm-gridcolumn> 
+                    </wm-gridrow> 
+                </wm-layoutgrid> 
+                <wm-livetable formlayout="dialog" name="livegrid_StudentAcademics"> 
+                    <wm-table gridfirstrowselect="false" editmode="dialog" title="STUDENT ACADEMICS" dataset="bind:Variables.StudentAcademicsData.dataSet" navigation="Classic" name="grid_StudentAcademics" showrecordcount="true" nodatamessage="Select Academic Year and Standard to View Student Records"> 
+                        <wm-table-column binding="studentDetails.studentId" caption="Student Id" type="integer" primary-key="true" generator="identity" readonly="true" edit-widget-type="number" searchable="false" show="true" related-entity-name="StudentDetails"></wm-table-column> 
+                        <wm-table-column binding="studentDetails.studentName" caption="Student Name" type="string" generator="assigned" edit-widget-type="text" searchable="false" show="true" related-entity-name="StudentDetails" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="rollNumber" caption="Roll Number" type="integer" generator="assigned" edit-widget-type="number" searchable="false" show="true" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="academics.academicYear" caption="Academic Year" type="string" primary-key="true" generator="assigned" edit-widget-type="text" show="true" related-entity-name="Academics" readonly="false"></wm-table-column> 
+                        <wm-table-column binding="rowOperations" caption="Actions" type="custom" width="120px" readonly="true" edit-widget-type="text" sortable="false" searchable="false" show="true"></wm-table-column> 
+                        <wm-table-action key="addNewRow" display-name="New" show="true" class="btn-primary" iconclass="wi wi-plus" title="New" action="addNewRow()" shortcutkey="" disabled="false"></wm-table-action> 
+                        <wm-table-row-action key="updaterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-pencil" title="Edit" action="editRow()" disabled="false"></wm-table-row-action> 
+                        <wm-table-row-action key="deleterow" display-name="" show="true" class="btn-transparent" iconclass="wi wi-trash" title="Delete" action="deleteRow()" disabled="false"></wm-table-row-action> 
+                    </wm-table> 
+                    <wm-liveform novalidate="false" errormessage="" title="Student_academics Info" formlayout="dialog" iconclass="wi wi-edit" dataset="bind:Variables.StudentAcademicsData.dataSet" captionalign="left" captionposition="left" name="liveform_StudentAcademics"> 
+                        <wm-layoutgrid columns="1" name="layoutgrid4"> 
+                            <wm-gridrow name="gridrow16"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn28"> 
+                                    <wm-form-field name="academics" displayname="Academics" show="true" primary-key="true" generator="assigned" key="academics" type="list" is-related="true" required="required" widget="select" maxchars="255" placeholder="Select value" defaultvalue="bind:Variables.LV_GetDataByAcademicStandard.firstRecord" dataset="bind:Variables.LV_GetDataByAcademicStandard.dataSet" displayexpression="bind:$[data[$i].academicYear]+' '+$[data[$i].standardDetails.standardName]" datafield="All Fields"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow17"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn29"> 
+                                    <wm-form-field name="studentDetails" displayname="Student Details" show="true" primary-key="true" generator="assigned" key="studentDetails" type="list" is-related="true" required="required" widget="select" placeholder="Select value" displayexpression="studentName"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                            <wm-gridrow name="gridrow18"> 
+                                <wm-gridcolumn columnwidth="12" name="gridcolumn30"> 
+                                    <wm-form-field name="rollNumber" displayname="Roll Number" show="true" primary-key="false" generator="assigned" key="rollNumber" type="integer" readonly="readonly" required="required" step="0" widget="number" inputtype="number" placeholder="Enter value" defaultvalue="bind:(Variables.StudentAcademicsData.lastRecord.rollNumber)+1"></wm-form-field> 
+                                </wm-gridcolumn> 
+                            </wm-gridrow> 
+                        </wm-layoutgrid> 
+                        <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action> 
+                        <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action> 
+                    </wm-liveform> 
+                </wm-livetable> 
+            </wm-gridcolumn> 
+            <wm-gridcolumn columnwidth="5" name="gridcolumn109_1"> 
+                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" dataset="bind:Widgets.grid_StudentAcademics.selecteditem" navigation="None" name="livelist3" nodatamessage="Select Record to View Details" title="Student Academic Details"> 
+                    <wm-listtemplate layout="inline" name="listtemplate3"> 
+                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container5"> 
+                            <wm-layoutgrid name="layoutgrid5" columns="6"> 
+                                <wm-gridrow name="gridrow35"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn125_1"> 
+                                        <wm-label padding="unset 0.5em" name="label43" caption="Student Name:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn126_1"> 
+                                        <wm-label padding="unset 0.5em" name="label44" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.studentName" class="p" fontunit="em"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow25"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn84"> 
+                                        <wm-label padding="unset 0.5em" name="label37" caption="Standard:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn85"> 
+                                        <wm-label padding="unset 0.5em" name="label39" caption="bind:Widgets.grid_StudentAcademics.selecteditem.academics.standardDetails.standardName" class="p"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow26"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn90"> 
+                                        <wm-label padding="unset 0.5em" name="label38" caption="Class Teacher:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn91"> 
+                                        <wm-label padding="unset 0.5em" name="label40" caption="bind:Widgets.grid_StudentAcademics.selecteditem.academics.classTeacher" class="p"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow27"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn96"> 
+                                        <wm-label padding="unset 0.5em" name="label41" caption="Date Of Birth:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn97"> 
+                                        <wm-label padding="unset 0.5em" name="label42" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.dateOfBirth" class="p"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow28"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn102"> 
+                                        <wm-label padding="unset 0.5em" name="label45" caption="Father Name:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn103"> 
+                                        <wm-label padding="unset 0.5em" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.fatherName" name="label53"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow27_1"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn104_1"> 
+                                        <wm-label padding="unset 0.5em" name="label60" caption="Address:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn105_1"> 
+                                        <wm-label padding="unset 0.5em" name="label49" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.address"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow28_1"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn110"> 
+                                        <wm-label padding="unset 0.5em" name="label46" caption="Contact Number:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn111"> 
+                                        <wm-label padding="unset 0.5em" name="label50" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.contactNumber"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                                <wm-gridrow name="gridrow29"> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn116"> 
+                                        <wm-label padding="unset 0.5em" name="label47" caption="Joining Date:"></wm-label> 
+                                    </wm-gridcolumn> 
+                                    <wm-gridcolumn columnwidth="6" name="gridcolumn117"> 
+                                        <wm-label padding="unset 0.5em" name="label51" caption="bind:Widgets.grid_StudentAcademics.selecteditem.studentDetails.joiningDate | toDate: 'dd-MMM-yyyy'"></wm-label> 
+                                    </wm-gridcolumn> 
+                                </wm-gridrow> 
+                            </wm-layoutgrid> 
+                        </wm-container> 
+                        <wm-container class="media-right" name="container6"></wm-container> 
+                    </wm-listtemplate> 
+                </wm-list> 
+            </wm-gridcolumn> 
+        </wm-gridrow> 
+    </wm-layoutgrid> 
+</wm-partial>

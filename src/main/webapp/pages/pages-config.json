@@ -1,0 +1,131 @@
+[ {
+  "name" : "AcademicDetails",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "AcademicSubjects",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "AcademicTestSubjects",
+  "type" : "PARTIAL",
+  "params" : [ {
+    "name" : "academicYear",
+    "type" : "string"
+  }, {
+    "name" : "standardID",
+    "type" : "integer"
+  } ]
+}, {
+  "name" : "Academic_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Common",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Dashboard",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Grade_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Login",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Main",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "ManagementPage",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "MasterDetails",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page2",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Page4",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Results",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Standard_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "StudentAcademics",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "StudentAdmissions",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "StudentDetails",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "Subject_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "TestCjharts",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "TestConductedPartial",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "Test_Details",
+  "type" : "PARTIAL",
+  "params" : [ ]
+}, {
+  "name" : "dummy",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "footer",
+  "type" : "FOOTER",
+  "params" : [ ]
+}, {
+  "name" : "header",
+  "type" : "HEADER",
+  "params" : [ ]
+}, {
+  "name" : "leftnav",
+  "type" : "LEFTNAV",
+  "params" : [ ]
+}, {
+  "name" : "page1",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "rightnav",
+  "type" : "RIGHTNAV",
+  "params" : [ ]
+}, {
+  "name" : "testing",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "topnav",
+  "type" : "TOPNAV",
+  "params" : [ ]
+}, {
+  "name" : "xyz",
+  "type" : "PAGE",
+  "params" : [ ]
+} ]
